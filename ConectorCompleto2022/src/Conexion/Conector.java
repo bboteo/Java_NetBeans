@@ -18,9 +18,9 @@ import java.sql.ResultSet;
 public class Conector {
     //Variables para la conexion
     private String driver = "com.mysql.jdbc.Driver"; //Referencia a las librerias (java data base conector)
-    private String host = "192.168.1.201:3306"; //Nombre del host o servidor de base de datos
-    private String user = "bboteo"; //Usuario de la base de datos
-    private String pass = "Passw0rd"; //Contrasena del usuario de la base de datos
+    private String host = "localhost";//"192.168.1.201:3306"; //Nombre del host o servidor de base de datos
+    private String user = "root";//"bboteo"; //Usuario de la base de datos
+    private String pass = "";//"Passw0rd"; //Contrasena del usuario de la base de datos
     private String db = "dbconector"; //Nombre de la base de datos
     private String cadena = ""; //Concatenacion de los anteriores
     
