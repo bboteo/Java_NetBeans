@@ -14,4 +14,5 @@ public interface ConsultasPais {
     public boolean insertar(PaisVO p);
     public ArrayList<PaisVO> consultar();
     public void eliminar(PaisVO p);
+    public void actualizar(PaisVO p);
 }

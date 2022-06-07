@@ -90,4 +90,25 @@ public class PaisDAO implements ConsultasPais {
        }
        c.desconectar();
     }
+
+    @Override
+    public void actualizar(PaisVO p) {
+        //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        Conector c = new Conector();
+        try {
+            c.conectar();
+            String query = "UPDATE dbconector.pais SET"
+                    + " nombre_pais= " + "'"+p.getNombrePais()+"',"
+                    + " capital_pais= "+ "'"+p.getCapital()+"',"
+                    + " poblacion_pais= "+p.getPoblacionPais()+","
+                    + " fecha_actualizacion_pais= "+"'"+p.getFechaActPais()+"',"
+                    + " ver_pais= TRUE"
+                    + " WHERE id_pais="+p.getIdPais();
+            c.consultasMultiples(query);
+        } catch (Exception e) {
+            System.err.println("Erro [MUpdate]: "+e.getMessage());
+            c.desconectar();
+        }
+        c.desconectar();
+    }
 }

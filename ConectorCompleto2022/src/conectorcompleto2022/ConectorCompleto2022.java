@@ -5,12 +5,14 @@
 package conectorcompleto2022;
 
 import Conexion.Conector;
+import Controlador.ControladorActualizar;
 import Controlador.ControladorEliminar;
 import Controlador.ControladorInsertar;
 import Controlador.ControladorMenu;
 import Controlador.ControladorMostrar;
 import Modelo.PaisDAO;
 import Modelo.PaisVO;
+import Vista.FrmActualizar;
 import Vista.FrmEliminar;
 import Vista.Frm_Mostrar;
 import Vista.Frm_insertar;
@@ -36,15 +38,17 @@ public class ConectorCompleto2022 {
         Frm_insertar fi = new Frm_insertar();
         Frm_Mostrar fmo = new Frm_Mostrar();
         FrmEliminar fel = new FrmEliminar();
+        FrmActualizar fac = new FrmActualizar();
         
         PaisVO pvo = new PaisVO();
         PaisDAO pdao = new PaisDAO();
         
         //Controladores
-        ControladorMenu cm = new ControladorMenu(fm, fi, fmo, fel);
+        ControladorMenu cm = new ControladorMenu(fm, fi, fmo, fel, fac);
         ControladorInsertar ci = new ControladorInsertar(fi,pvo,pdao);
         ControladorMostrar cmo = new ControladorMostrar(fmo,pvo,pdao);
         ControladorEliminar cel = new ControladorEliminar(fel,pvo,pdao);
+        ControladorActualizar cac = new ControladorActualizar(fac, pvo, pdao);
         
         //Configuracion de pantallas
         fm.setVisible(true);
