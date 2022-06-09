@@ -26,37 +26,71 @@ public class FrmMenu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        btnMenuNuevo = new javax.swing.JButton();
         btnMenuMostrar = new javax.swing.JButton();
         btnMenuActualizar = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
+        btnMenuIngresoAutor = new javax.swing.JButton();
+        btnMenuIngresoLibro = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
         btnMenuEliminar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Menu Principal");
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jLabel1.setText("BIBLIOTECA");
-
-        btnMenuNuevo.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        btnMenuNuevo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/mas.png"))); // NOI18N
-        btnMenuNuevo.setText("Nuevo");
-        btnMenuNuevo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnMenuNuevoActionPerformed(evt);
-            }
-        });
-
         btnMenuMostrar.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        btnMenuMostrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/buscar.png"))); // NOI18N
+        btnMenuMostrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/buscar.png"))); // NOI18N
         btnMenuMostrar.setText("Mostrar");
 
         btnMenuActualizar.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        btnMenuActualizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/configuraciones.png"))); // NOI18N
+        btnMenuActualizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/configuraciones.png"))); // NOI18N
         btnMenuActualizar.setText("Actualizar");
 
+        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        btnMenuIngresoAutor.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        btnMenuIngresoAutor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/mas.png"))); // NOI18N
+        btnMenuIngresoAutor.setText("Ingresar Autor");
+        btnMenuIngresoAutor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMenuIngresoAutorActionPerformed(evt);
+            }
+        });
+
+        btnMenuIngresoLibro.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        btnMenuIngresoLibro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/mas.png"))); // NOI18N
+        btnMenuIngresoLibro.setText("Ingresar Libro");
+        btnMenuIngresoLibro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMenuIngresoLibroActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnMenuIngresoAutor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnMenuIngresoLibro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(16, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(17, 17, 17)
+                .addComponent(btnMenuIngresoAutor)
+                .addGap(18, 18, 18)
+                .addComponent(btnMenuIngresoLibro)
+                .addContainerGap(22, Short.MAX_VALUE))
+        );
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel1.setText("Ingrese Nuevo");
+
         btnMenuEliminar.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        btnMenuEliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/menos.png"))); // NOI18N
+        btnMenuEliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/menos.png"))); // NOI18N
         btnMenuEliminar.setText("Eliminar");
         btnMenuEliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -69,41 +103,48 @@ public class FrmMenu extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(17, 17, 17)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGap(24, 24, 24)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel1)
-                    .addComponent(btnMenuActualizar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnMenuEliminar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnMenuMostrar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnMenuNuevo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(20, Short.MAX_VALUE))
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(btnMenuEliminar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnMenuActualizar, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
+                            .addComponent(btnMenuMostrar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addContainerGap(25, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnMenuNuevo)
-                .addGap(18, 18, 18)
-                .addComponent(btnMenuMostrar)
+                .addComponent(btnMenuEliminar)
                 .addGap(18, 18, 18)
                 .addComponent(btnMenuActualizar)
                 .addGap(18, 18, 18)
-                .addComponent(btnMenuEliminar)
-                .addContainerGap(22, Short.MAX_VALUE))
+                .addComponent(btnMenuMostrar)
+                .addContainerGap(74, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnMenuNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMenuNuevoActionPerformed
+    private void btnMenuIngresoAutorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMenuIngresoAutorActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnMenuNuevoActionPerformed
+    }//GEN-LAST:event_btnMenuIngresoAutorActionPerformed
 
     private void btnMenuEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMenuEliminarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnMenuEliminarActionPerformed
+
+    private void btnMenuIngresoLibroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMenuIngresoLibroActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnMenuIngresoLibroActionPerformed
 
     /**
      * @param args the command line arguments
@@ -143,8 +184,10 @@ public class FrmMenu extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton btnMenuActualizar;
     public javax.swing.JButton btnMenuEliminar;
+    public javax.swing.JButton btnMenuIngresoAutor;
+    public javax.swing.JButton btnMenuIngresoLibro;
     public javax.swing.JButton btnMenuMostrar;
-    public javax.swing.JButton btnMenuNuevo;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

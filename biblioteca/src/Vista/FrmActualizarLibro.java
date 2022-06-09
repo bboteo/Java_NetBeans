@@ -8,12 +8,12 @@ package Vista;
  *
  * @author bboteo
  */
-public class FrmIngresarLibro extends javax.swing.JFrame {
+public class FrmActualizarLibro extends javax.swing.JFrame {
 
     /**
      * Creates new form FrmIngresarAutor
      */
-    public FrmIngresarLibro() {
+    public FrmActualizarLibro() {
         initComponents();
     }
 
@@ -26,7 +26,6 @@ public class FrmIngresarLibro extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jopInsertarLibroAlerta = new javax.swing.JOptionPane();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
@@ -36,6 +35,8 @@ public class FrmIngresarLibro extends javax.swing.JFrame {
         txbIngresarLibroSaga = new javax.swing.JTextArea();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        txbIngresarLibroEdicion = new javax.swing.JTextArea();
         jLabel6 = new javax.swing.JLabel();
         jScrollPane6 = new javax.swing.JScrollPane();
         txbIngresarLibroPaginas = new javax.swing.JTextArea();
@@ -46,17 +47,16 @@ public class FrmIngresarLibro extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         cbxIngresarLibroAutor = new javax.swing.JComboBox<>();
+        jcbIngresarLibroFechaDia = new javax.swing.JComboBox<>();
+        jcbIngresarLibroFechaMes = new javax.swing.JComboBox<>();
+        jcbIngresarLibroFechaAno = new javax.swing.JComboBox<>();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         jcbIngresarLibroNumLibro = new javax.swing.JComboBox<>();
-        jcbIngresarLibroEdicion = new javax.swing.JComboBox<>();
-        jScrollPane7 = new javax.swing.JScrollPane();
-        txbIngresarLibroDia = new javax.swing.JTextArea();
-        jScrollPane8 = new javax.swing.JScrollPane();
-        txbIngresarLibroMes = new javax.swing.JTextArea();
-        jScrollPane9 = new javax.swing.JScrollPane();
-        txbIngresarLibroanio = new javax.swing.JTextArea();
+        jLabel14 = new javax.swing.JLabel();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        txbIngresarLibroNombre1 = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Ingresar Autor");
@@ -86,6 +86,11 @@ public class FrmIngresarLibro extends javax.swing.JFrame {
         jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel5.setText("Edicion");
 
+        txbIngresarLibroEdicion.setColumns(15);
+        txbIngresarLibroEdicion.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        txbIngresarLibroEdicion.setTabSize(0);
+        jScrollPane5.setViewportView(txbIngresarLibroEdicion);
+
         jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel6.setText("Paginas");
 
@@ -113,6 +118,12 @@ public class FrmIngresarLibro extends javax.swing.JFrame {
 
         cbxIngresarLibroAutor.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
+        jcbIngresarLibroFechaDia.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+
+        jcbIngresarLibroFechaMes.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+
+        jcbIngresarLibroFechaAno.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+
         jLabel11.setText("Dia");
 
         jLabel12.setText("Mes");
@@ -122,24 +133,14 @@ public class FrmIngresarLibro extends javax.swing.JFrame {
         jcbIngresarLibroNumLibro.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jcbIngresarLibroNumLibro.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12" }));
 
-        jcbIngresarLibroEdicion.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jcbIngresarLibroEdicion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1raEdicion", "2daEdicion", "3raEdicion", "4taEdicion", "5taEdicion", "6taEdicion", "8vaEdicion", "9naEdicion", "10maEdicion" }));
-        jcbIngresarLibroEdicion.setToolTipText("");
+        jLabel14.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel14.setText("Id Libro*");
 
-        txbIngresarLibroDia.setColumns(2);
-        txbIngresarLibroDia.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        txbIngresarLibroDia.setTabSize(0);
-        jScrollPane7.setViewportView(txbIngresarLibroDia);
-
-        txbIngresarLibroMes.setColumns(2);
-        txbIngresarLibroMes.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        txbIngresarLibroMes.setTabSize(0);
-        jScrollPane8.setViewportView(txbIngresarLibroMes);
-
-        txbIngresarLibroanio.setColumns(2);
-        txbIngresarLibroanio.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        txbIngresarLibroanio.setTabSize(0);
-        jScrollPane9.setViewportView(txbIngresarLibroanio);
+        txbIngresarLibroNombre1.setEditable(false);
+        txbIngresarLibroNombre1.setColumns(10);
+        txbIngresarLibroNombre1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        txbIngresarLibroNombre1.setTabSize(0);
+        jScrollPane4.setViewportView(txbIngresarLibroNombre1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -149,65 +150,64 @@ public class FrmIngresarLibro extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(21, 21, 21)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jLabel1)
-                                        .addComponent(jLabel2))
-                                    .addGap(36, 62, Short.MAX_VALUE)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(jScrollPane2)
-                                        .addComponent(jLabel10)
-                                        .addComponent(cbxIngresarLibroAutor, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(layout.createSequentialGroup()
-                                            .addGap(28, 28, 28)
-                                            .addComponent(jLabel11)
-                                            .addGap(73, 73, 73)
-                                            .addComponent(jLabel12)
-                                            .addGap(68, 68, 68)
-                                            .addComponent(jLabel13))
-                                        .addGroup(layout.createSequentialGroup()
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addGap(18, 18, 18)
-                                            .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addGap(18, 18, 18)
-                                            .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                    .addGap(11, 11, 11))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(layout.createSequentialGroup()
-                                            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED))
-                                        .addGroup(layout.createSequentialGroup()
-                                            .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addGap(79, 79, 79)))
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 130, Short.MAX_VALUE)
-                                        .addComponent(jcbIngresarLibroEdicion, 0, 1, Short.MAX_VALUE))
-                                    .addGap(18, 18, 18)
-                                    .addComponent(jLabel4)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(jcbIngresarLibroNumLibro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jLabel4)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jcbIngresarLibroNumLibro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(65, 65, 65)
-                                .addComponent(btnIngresarAutorRegistrar)
-                                .addGap(46, 46, 46)
-                                .addComponent(btnIngresarAutorCancelar))))
+                                .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jcbIngresarLibroFechaDia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jcbIngresarLibroFechaMes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jcbIngresarLibroFechaAno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(2, 2, 2))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(28, 28, 28)
+                                        .addComponent(jLabel11)
+                                        .addGap(73, 73, 73)
+                                        .addComponent(jLabel12)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jLabel13)
+                                        .addGap(27, 27, 27))))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel1)
+                                    .addComponent(jLabel2)
+                                    .addComponent(jLabel14))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jScrollPane2)
+                                    .addComponent(jLabel10)
+                                    .addComponent(cbxIngresarLibroAutor, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jScrollPane4)))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(86, 86, 86)
+                        .addComponent(btnIngresarAutorRegistrar)
+                        .addGap(46, 46, 46)
+                        .addComponent(btnIngresarAutorCancelar))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(87, 87, 87)
                         .addComponent(jLabel9)))
-                .addContainerGap(14, Short.MAX_VALUE))
+                .addContainerGap(26, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -216,6 +216,10 @@ public class FrmIngresarLibro extends javax.swing.JFrame {
                 .addComponent(jLabel9)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel10)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel14)
+                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
@@ -234,10 +238,10 @@ public class FrmIngresarLibro extends javax.swing.JFrame {
                         .addComponent(jcbIngresarLibroNumLibro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel4)))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel5)
-                    .addComponent(jcbIngresarLibroEdicion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(25, 25, 25)
+                    .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel6)
                     .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -246,12 +250,7 @@ public class FrmIngresarLibro extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(jLabel7)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel8)
-                        .addGap(18, 18, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btnIngresarAutorRegistrar)
-                            .addComponent(btnIngresarAutorCancelar))
-                        .addGap(24, 24, 24))
+                        .addComponent(jLabel8))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(12, 12, 12)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -259,11 +258,15 @@ public class FrmIngresarLibro extends javax.swing.JFrame {
                             .addComponent(jLabel12)
                             .addComponent(jLabel13))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jcbIngresarLibroFechaDia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jcbIngresarLibroFechaMes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jcbIngresarLibroFechaAno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(18, 18, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnIngresarAutorRegistrar)
+                    .addComponent(btnIngresarAutorCancelar))
+                .addGap(24, 24, 24))
         );
 
         pack();
@@ -286,14 +289,22 @@ public class FrmIngresarLibro extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(FrmIngresarLibro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmActualizarLibro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(FrmIngresarLibro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmActualizarLibro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(FrmIngresarLibro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmActualizarLibro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(FrmIngresarLibro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmActualizarLibro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -306,7 +317,7 @@ public class FrmIngresarLibro extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new FrmIngresarLibro().setVisible(true);
+                new FrmActualizarLibro().setVisible(true);
             }
         });
     }
@@ -320,6 +331,7 @@ public class FrmIngresarLibro extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -330,18 +342,17 @@ public class FrmIngresarLibro extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
-    private javax.swing.JScrollPane jScrollPane7;
-    private javax.swing.JScrollPane jScrollPane8;
-    private javax.swing.JScrollPane jScrollPane9;
-    public javax.swing.JComboBox<String> jcbIngresarLibroEdicion;
+    public javax.swing.JComboBox<String> jcbIngresarLibroFechaAno;
+    public javax.swing.JComboBox<String> jcbIngresarLibroFechaDia;
+    public javax.swing.JComboBox<String> jcbIngresarLibroFechaMes;
     public javax.swing.JComboBox<String> jcbIngresarLibroNumLibro;
-    public javax.swing.JOptionPane jopInsertarLibroAlerta;
-    public javax.swing.JTextArea txbIngresarLibroDia;
-    public javax.swing.JTextArea txbIngresarLibroMes;
+    public javax.swing.JTextArea txbIngresarLibroEdicion;
     public javax.swing.JTextArea txbIngresarLibroNombre;
+    public javax.swing.JTextArea txbIngresarLibroNombre1;
     public javax.swing.JTextArea txbIngresarLibroPaginas;
     public javax.swing.JTextArea txbIngresarLibroSaga;
-    public javax.swing.JTextArea txbIngresarLibroanio;
     // End of variables declaration//GEN-END:variables
 }

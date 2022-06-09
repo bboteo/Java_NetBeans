@@ -16,6 +16,7 @@ public class AutorVO {
     private String apellido1;
     private String apellido2;
     private String alias;
+    private String pais;
     private String correo;
     private String fecha_registro;
     private String fecha_modificacion;
@@ -51,6 +52,10 @@ public class AutorVO {
         return alias;
     }
 
+    public String getPais() {
+        return pais;
+    }
+   
     public String getCorreo() {
         return correo;
     }
@@ -91,6 +96,11 @@ public class AutorVO {
         this.alias = alias;
     }
 
+    public void setPais(String pais) {
+        this.pais = pais;
+    }
+
+    
     public void setCorreo(String correo) {
         this.correo = correo;
     }

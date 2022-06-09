@@ -14,8 +14,10 @@ public class LibroVO {
     private String saga;
     private int numeroLibro;
     private int edicion;
+    private int paginas;
     private String fechaPublicacion;
     private String fechaModificacion;
+    private int autorIdFk;
 
     public LibroVO() {
     }
@@ -40,12 +42,22 @@ public class LibroVO {
         return edicion;
     }
 
+    public int getPaginas() {
+        return paginas;
+    }
+    
+    
+
     public String getFechaPublicacion() {
         return fechaPublicacion;
     }
 
     public String getFechaModificacion() {
         return fechaModificacion;
+    }
+
+    public int getAutorIdFk() {
+        return autorIdFk;
     }
 
     public void setId(int id) {
@@ -68,6 +80,11 @@ public class LibroVO {
         this.edicion = edicion;
     }
 
+    public void setPaginas(int paginas) {
+        this.paginas = paginas;
+    }
+
+    
     public void setFechaPublicacion(String fechaPublicacion) {
         this.fechaPublicacion = fechaPublicacion;
     }
@@ -75,6 +92,11 @@ public class LibroVO {
     public void setFechaModificacion(String fechaModificacion) {
         this.fechaModificacion = fechaModificacion;
     }
+
+    public void setAutorIdFk(int autorIdFk) {
+        this.autorIdFk = autorIdFk;
+    }
+    
     
     
 }
