@@ -8,10 +8,6 @@ import Conexion.ConectorBiblioteca;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 
-/**
- *
- * @author bboteo
- */
 public class LibroDAO implements TablaLibro{
 
     @Override
@@ -87,7 +83,22 @@ public class LibroDAO implements TablaLibro{
 
     @Override
     public void actualizarL(LibroVO l) {
-        //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        ConectorBiblioteca c = new ConectorBiblioteca();
+        try {
+            c.conectar();
+            String query = "UPDATE dbbiblio.libro SET "
+                    + "nombre = "+ "'"+l.getNombre()+"',"
+                    + "saga = "+ "'"+l.getSaga()+"',"
+                    + "numero_libro = "+ l.getNumeroLibro()+","
+                    + "edicion = "+ l.getEdicion()+","
+                    + "paginas = "+ l.getPaginas()+","
+                    + "fecha_publicacion = "+ "'"+l.getFechaPublicacion()+"',"
+                    + "autor_id_fk = "+ l.getAutorIdFk()+" "
+                    + "WHERE id = "+l.getId();
+            c.consultasMultiples(query);
+        } catch (Exception e) {
+            System.err.println("Error [MC]: "+e.getMessage());
+        }
     }
 
     public ArrayList<LibroVO> consultaEL(AutorVO a) {

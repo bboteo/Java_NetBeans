@@ -26,6 +26,7 @@ public class FrmActualizarLibro extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jopActualizarLibroAlerta = new javax.swing.JOptionPane();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
@@ -205,16 +206,16 @@ public class FrmActualizarLibro extends javax.swing.JFrame {
                                         .addGap(44, 44, 44))
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                                        .addGap(31, 31, 31)))
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jScrollPane3)
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(jcbActualizarLibroNumLibro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addComponent(jcbActualizarLibroEdicion, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(jScrollPane6, javax.swing.GroupLayout.Alignment.TRAILING)))))
+                                    .addComponent(jScrollPane6, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jScrollPane3, javax.swing.GroupLayout.Alignment.TRAILING)))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(86, 86, 86)
                         .addComponent(btnIngresarAutorRegistrar)
@@ -370,6 +371,7 @@ public class FrmActualizarLibro extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane9;
     public javax.swing.JComboBox<String> jcbActualizarLibroEdicion;
     public javax.swing.JComboBox<String> jcbActualizarLibroNumLibro;
+    public javax.swing.JOptionPane jopActualizarLibroAlerta;
     public javax.swing.JTextArea txbActualizarLibroDia;
     public javax.swing.JTextArea txbActualizarLibroId;
     public javax.swing.JTextArea txbActualizarLibroMes;
