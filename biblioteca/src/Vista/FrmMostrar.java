@@ -42,12 +42,15 @@ public class FrmMostrar extends javax.swing.JFrame {
         setTitle("Mostrar");
 
         btnMostrarAutores.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        btnMostrarAutores.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/editor.png"))); // NOI18N
         btnMostrarAutores.setText("Autores");
 
         btnMostrarLibros.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        btnMostrarLibros.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/libro.png"))); // NOI18N
         btnMostrarLibros.setText("Libros");
 
         btnMostrarClave.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        btnMostrarClave.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/buscar.png"))); // NOI18N
         btnMostrarClave.setText("Clave");
 
         txbMostrarClave.setEditable(false);
@@ -78,17 +81,17 @@ public class FrmMostrar extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 817, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(6, 6, 6)
                         .addComponent(lbMostrarBuscando)
-                        .addGap(0, 730, Short.MAX_VALUE))
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(btnMostrarAutores)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnMostrarLibros, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnMostrarClave, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnMostrarLibros)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnMostrarClave)
                         .addGap(18, 18, 18)
                         .addComponent(jScrollPane1)))
                 .addContainerGap())
@@ -107,7 +110,7 @@ public class FrmMostrar extends javax.swing.JFrame {
                 .addComponent(lbMostrarBuscando)
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(17, Short.MAX_VALUE))
+                .addContainerGap(10, Short.MAX_VALUE))
         );
 
         pack();

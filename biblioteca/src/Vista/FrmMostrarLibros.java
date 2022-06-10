@@ -34,7 +34,7 @@ public class FrmMostrarLibros extends javax.swing.JFrame {
         tblMostrarLibro = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Autor que Publico Libro");
+        setTitle("Autor de Libro");
 
         lbMostrarLibro.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lbMostrarLibro.setText("Libro Seleccionado");

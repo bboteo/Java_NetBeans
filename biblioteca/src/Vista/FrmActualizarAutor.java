@@ -127,9 +127,11 @@ public class FrmActualizarAutor extends javax.swing.JFrame {
         jScrollPane8.setViewportView(txbActualizarCorreo);
 
         btnActualizarAutor.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        btnActualizarAutor.setText("Registrar");
+        btnActualizarAutor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/sincronizar.png"))); // NOI18N
+        btnActualizarAutor.setText("Actualizar");
 
         btnActualizarCancelar.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        btnActualizarCancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/cancelar.png"))); // NOI18N
         btnActualizarCancelar.setText("Cancelar");
 
         jLabel9.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
@@ -153,9 +155,9 @@ public class FrmActualizarAutor extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(86, 86, 86)
+                        .addGap(54, 54, 54)
                         .addComponent(btnActualizarAutor)
-                        .addGap(46, 46, 46)
+                        .addGap(29, 29, 29)
                         .addComponent(btnActualizarCancelar))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(21, 21, 21)
@@ -169,7 +171,7 @@ public class FrmActualizarAutor extends javax.swing.JFrame {
                                         .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(jLabel2)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addGap(18, 18, 18)
                                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                         .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -201,7 +203,7 @@ public class FrmActualizarAutor extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(121, 121, 121)
                         .addComponent(jLabel9)))
-                .addContainerGap(25, Short.MAX_VALUE))
+                .addContainerGap(20, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -246,11 +248,11 @@ public class FrmActualizarAutor extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel8)
                     .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnActualizarAutor)
                     .addComponent(btnActualizarCancelar))
-                .addGap(24, 24, 24))
+                .addContainerGap(12, Short.MAX_VALUE))
         );
 
         pack();
