@@ -4,9 +4,14 @@
  */
 package biblioteca;
 
+import Controlador.ControladorActualizar;
+import Controlador.ControladorActualizarAutor;
+import Controlador.ControladorActualizarLibro;
+import Controlador.ControladorEliminar;
 import Controlador.ControladorIngresarAutor;
 import Controlador.ControladorIngresarLibro;
 import Controlador.ControladorMenuPrincipal;
+import Controlador.ControladorMostrar;
 import Modelo.AutorDAO;
 import Modelo.AutorVO;
 import Modelo.LibroDAO;
@@ -19,6 +24,8 @@ import Vista.FrmIngresarAutor;
 import Vista.FrmIngresarLibro;
 import Vista.FrmMenu;
 import Vista.FrmMostrar;
+import Vista.FrmMostrarAutor;
+import Vista.FrmMostrarLibros;
 
 /**
  *
@@ -35,6 +42,8 @@ public class Biblioteca {
         FrmIngresarAutor fMiAt = new FrmIngresarAutor();
         FrmIngresarLibro fMiLb = new FrmIngresarLibro();
         FrmMostrar fMm = new FrmMostrar();
+        FrmMostrarAutor fMmA = new FrmMostrarAutor();
+        FrmMostrarLibros fMmL = new FrmMostrarLibros();
         FrmActualizar fMa = new FrmActualizar();
         FrmActualizarAutor fMaAt = new FrmActualizarAutor();
         FrmActualizarLibro fMaLb = new FrmActualizarLibro();
@@ -50,6 +59,11 @@ public class Biblioteca {
         ControladorMenuPrincipal cMp = new ControladorMenuPrincipal(fMp, fMiAt, fMiLb, fMm, fMa, fMaAt, fMaLb, fMe);
         ControladorIngresarAutor cMiAt = new ControladorIngresarAutor(fMiAt, avo, adao);
         ControladorIngresarLibro cMiLb = new ControladorIngresarLibro(fMiLb, lvo, ldao, avo, adao);
+        ControladorMostrar cMm = new ControladorMostrar(fMm, fMmA, fMmL, adao, avo, ldao, lvo);
+        ControladorEliminar cMe = new ControladorEliminar(fMe, adao, avo, ldao, lvo);
+        ControladorActualizar cMa = new ControladorActualizar(fMa, fMaAt, fMaLb, adao, avo, ldao, lvo);
+        ControladorActualizarAutor cMaAt = new ControladorActualizarAutor(fMaAt, adao, avo);
+        ControladorActualizarLibro cMaLb = new ControladorActualizarLibro(fMaLb, ldao, lvo, adao, avo);
         
         //Inicalizacion de la primera pantalla
         fMp.setVisible(true);

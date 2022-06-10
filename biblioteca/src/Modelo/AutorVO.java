@@ -111,6 +111,6 @@ public class AutorVO {
 
     public void setFecha_modificacion(String fecha_modificacion) {
         this.fecha_modificacion = fecha_modificacion;
-    }
+    }  
     
 }

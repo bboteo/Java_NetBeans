@@ -11,10 +11,6 @@ import Vista.FrmIngresarAutor;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-/**
- *
- * @author bboteo
- */
 public class ControladorIngresarAutor implements ActionListener{
     FrmIngresarAutor vMiAt = new FrmIngresarAutor();
     AutorVO avo = new AutorVO();

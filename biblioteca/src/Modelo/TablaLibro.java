@@ -13,6 +13,8 @@ import java.util.ArrayList;
 public interface TablaLibro {
     public boolean insertarL (LibroVO l);
     public ArrayList<LibroVO> consultarL();
+    public ArrayList<LibroVO> consultaEL(AutorVO a);
+    public ArrayList<LibroVO> consultarLxId(LibroVO l);
     public void eliminarL (LibroVO l);
     public void actualizarL (LibroVO l);
     

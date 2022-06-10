@@ -26,37 +26,38 @@ public class FrmActualizarAutor extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jopActualizarAutorAlerta = new javax.swing.JOptionPane();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        txbIngresarAutorNombre1 = new javax.swing.JTextArea();
+        txbActualizarNombre1 = new javax.swing.JTextArea();
         jLabel2 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        txbIngresarAutorNombre2 = new javax.swing.JTextArea();
+        txbActualizarNombre2 = new javax.swing.JTextArea();
         jLabel3 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
-        txbIngresarAutorNombre3 = new javax.swing.JTextArea();
+        txbActualizarNombre3 = new javax.swing.JTextArea();
         jLabel4 = new javax.swing.JLabel();
         jScrollPane4 = new javax.swing.JScrollPane();
-        txbIngresarAutorApellido1 = new javax.swing.JTextArea();
+        txbActualizarApellido1 = new javax.swing.JTextArea();
         jLabel5 = new javax.swing.JLabel();
         jScrollPane5 = new javax.swing.JScrollPane();
-        txbIngresarAutorApellido2 = new javax.swing.JTextArea();
+        txbActualizarApellido2 = new javax.swing.JTextArea();
         jLabel6 = new javax.swing.JLabel();
         jScrollPane6 = new javax.swing.JScrollPane();
-        txbIngresarAutorAlias = new javax.swing.JTextArea();
+        txbActualizarAlias = new javax.swing.JTextArea();
         jScrollPane7 = new javax.swing.JScrollPane();
-        txbIngresarAutorPais = new javax.swing.JTextArea();
+        txbActualizarPais = new javax.swing.JTextArea();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jScrollPane8 = new javax.swing.JScrollPane();
-        txbIngresarAutorPais1 = new javax.swing.JTextArea();
-        btnIngresarAutorRegistrar = new javax.swing.JButton();
-        btnIngresarAutorCancelar = new javax.swing.JButton();
+        txbActualizarCorreo = new javax.swing.JTextArea();
+        btnActualizarAutor = new javax.swing.JButton();
+        btnActualizarCancelar = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jScrollPane9 = new javax.swing.JScrollPane();
-        txbIngresarAutorNombre4 = new javax.swing.JTextArea();
+        txbActualizarIdAutor = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Ingresar Autor");
@@ -64,55 +65,55 @@ public class FrmActualizarAutor extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel1.setText("1re Nombre*");
 
-        txbIngresarAutorNombre1.setColumns(15);
-        txbIngresarAutorNombre1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        txbIngresarAutorNombre1.setTabSize(0);
-        jScrollPane1.setViewportView(txbIngresarAutorNombre1);
+        txbActualizarNombre1.setColumns(15);
+        txbActualizarNombre1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        txbActualizarNombre1.setTabSize(0);
+        jScrollPane1.setViewportView(txbActualizarNombre1);
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel2.setText("2do Nombre");
 
-        txbIngresarAutorNombre2.setColumns(15);
-        txbIngresarAutorNombre2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        txbIngresarAutorNombre2.setTabSize(0);
-        jScrollPane2.setViewportView(txbIngresarAutorNombre2);
+        txbActualizarNombre2.setColumns(15);
+        txbActualizarNombre2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        txbActualizarNombre2.setTabSize(0);
+        jScrollPane2.setViewportView(txbActualizarNombre2);
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel3.setText("3re Nombre");
 
-        txbIngresarAutorNombre3.setColumns(15);
-        txbIngresarAutorNombre3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        txbIngresarAutorNombre3.setTabSize(0);
-        jScrollPane3.setViewportView(txbIngresarAutorNombre3);
+        txbActualizarNombre3.setColumns(15);
+        txbActualizarNombre3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        txbActualizarNombre3.setTabSize(0);
+        jScrollPane3.setViewportView(txbActualizarNombre3);
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel4.setText("1re Apellido*");
 
-        txbIngresarAutorApellido1.setColumns(15);
-        txbIngresarAutorApellido1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        txbIngresarAutorApellido1.setTabSize(0);
-        jScrollPane4.setViewportView(txbIngresarAutorApellido1);
+        txbActualizarApellido1.setColumns(15);
+        txbActualizarApellido1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        txbActualizarApellido1.setTabSize(0);
+        jScrollPane4.setViewportView(txbActualizarApellido1);
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel5.setText("2do Apellido");
 
-        txbIngresarAutorApellido2.setColumns(15);
-        txbIngresarAutorApellido2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        txbIngresarAutorApellido2.setTabSize(0);
-        jScrollPane5.setViewportView(txbIngresarAutorApellido2);
+        txbActualizarApellido2.setColumns(15);
+        txbActualizarApellido2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        txbActualizarApellido2.setTabSize(0);
+        jScrollPane5.setViewportView(txbActualizarApellido2);
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel6.setText("Alias");
 
-        txbIngresarAutorAlias.setColumns(15);
-        txbIngresarAutorAlias.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        txbIngresarAutorAlias.setTabSize(0);
-        jScrollPane6.setViewportView(txbIngresarAutorAlias);
+        txbActualizarAlias.setColumns(15);
+        txbActualizarAlias.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        txbActualizarAlias.setTabSize(0);
+        jScrollPane6.setViewportView(txbActualizarAlias);
 
-        txbIngresarAutorPais.setColumns(15);
-        txbIngresarAutorPais.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        txbIngresarAutorPais.setTabSize(0);
-        jScrollPane7.setViewportView(txbIngresarAutorPais);
+        txbActualizarPais.setColumns(15);
+        txbActualizarPais.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        txbActualizarPais.setTabSize(0);
+        jScrollPane7.setViewportView(txbActualizarPais);
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel7.setText("Pais*");
@@ -120,30 +121,30 @@ public class FrmActualizarAutor extends javax.swing.JFrame {
         jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel8.setText("Correo*");
 
-        txbIngresarAutorPais1.setColumns(15);
-        txbIngresarAutorPais1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        txbIngresarAutorPais1.setTabSize(0);
-        jScrollPane8.setViewportView(txbIngresarAutorPais1);
+        txbActualizarCorreo.setColumns(15);
+        txbActualizarCorreo.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        txbActualizarCorreo.setTabSize(0);
+        jScrollPane8.setViewportView(txbActualizarCorreo);
 
-        btnIngresarAutorRegistrar.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        btnIngresarAutorRegistrar.setText("Registrar");
+        btnActualizarAutor.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        btnActualizarAutor.setText("Registrar");
 
-        btnIngresarAutorCancelar.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        btnIngresarAutorCancelar.setText("Cancelar");
+        btnActualizarCancelar.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        btnActualizarCancelar.setText("Cancelar");
 
         jLabel9.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jLabel9.setText("Registrar Nuevo Autor");
+        jLabel9.setText("Actualizar Autor");
 
         jLabel10.setText("(*) Informacion obligatoria");
 
         jLabel11.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel11.setText("Id Autor*");
 
-        txbIngresarAutorNombre4.setEditable(false);
-        txbIngresarAutorNombre4.setColumns(15);
-        txbIngresarAutorNombre4.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        txbIngresarAutorNombre4.setTabSize(0);
-        jScrollPane9.setViewportView(txbIngresarAutorNombre4);
+        txbActualizarIdAutor.setEditable(false);
+        txbActualizarIdAutor.setColumns(15);
+        txbActualizarIdAutor.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        txbActualizarIdAutor.setTabSize(0);
+        jScrollPane9.setViewportView(txbActualizarIdAutor);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -153,12 +154,9 @@ public class FrmActualizarAutor extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(86, 86, 86)
-                        .addComponent(btnIngresarAutorRegistrar)
+                        .addComponent(btnActualizarAutor)
                         .addGap(46, 46, 46)
-                        .addComponent(btnIngresarAutorCancelar))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(88, 88, 88)
-                        .addComponent(jLabel9))
+                        .addComponent(btnActualizarCancelar))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(21, 21, 21)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -199,7 +197,10 @@ public class FrmActualizarAutor extends javax.swing.JFrame {
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addComponent(jLabel10)
                                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
+                                        .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(121, 121, 121)
+                        .addComponent(jLabel9)))
                 .addContainerGap(25, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -247,8 +248,8 @@ public class FrmActualizarAutor extends javax.swing.JFrame {
                     .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnIngresarAutorRegistrar)
-                    .addComponent(btnIngresarAutorCancelar))
+                    .addComponent(btnActualizarAutor)
+                    .addComponent(btnActualizarCancelar))
                 .addGap(24, 24, 24))
         );
 
@@ -298,8 +299,8 @@ public class FrmActualizarAutor extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.JButton btnIngresarAutorCancelar;
-    public javax.swing.JButton btnIngresarAutorRegistrar;
+    public javax.swing.JButton btnActualizarAutor;
+    public javax.swing.JButton btnActualizarCancelar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -320,14 +321,15 @@ public class FrmActualizarAutor extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JScrollPane jScrollPane9;
-    public javax.swing.JTextArea txbIngresarAutorAlias;
-    public javax.swing.JTextArea txbIngresarAutorApellido1;
-    public javax.swing.JTextArea txbIngresarAutorApellido2;
-    public javax.swing.JTextArea txbIngresarAutorNombre1;
-    public javax.swing.JTextArea txbIngresarAutorNombre2;
-    public javax.swing.JTextArea txbIngresarAutorNombre3;
-    public javax.swing.JTextArea txbIngresarAutorNombre4;
-    public javax.swing.JTextArea txbIngresarAutorPais;
-    public javax.swing.JTextArea txbIngresarAutorPais1;
+    public javax.swing.JOptionPane jopActualizarAutorAlerta;
+    public javax.swing.JTextArea txbActualizarAlias;
+    public javax.swing.JTextArea txbActualizarApellido1;
+    public javax.swing.JTextArea txbActualizarApellido2;
+    public javax.swing.JTextArea txbActualizarCorreo;
+    public javax.swing.JTextArea txbActualizarIdAutor;
+    public javax.swing.JTextArea txbActualizarNombre1;
+    public javax.swing.JTextArea txbActualizarNombre2;
+    public javax.swing.JTextArea txbActualizarNombre3;
+    public javax.swing.JTextArea txbActualizarPais;
     // End of variables declaration//GEN-END:variables
 }

@@ -32,11 +32,11 @@ public class FrmMostrar extends javax.swing.JFrame {
         btnMostrarLibros = new javax.swing.JButton();
         btnMostrarClave = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
-        jLabel1 = new javax.swing.JLabel();
+        txbMostrarClave = new javax.swing.JTextArea();
+        lbMostrarBuscando = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         DefaultTableModel dtm = new DefaultTableModel();
-        jTable1 = new javax.swing.JTable();
+        tblMostrarMostrar = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Mostrar");
@@ -50,14 +50,15 @@ public class FrmMostrar extends javax.swing.JFrame {
         btnMostrarClave.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btnMostrarClave.setText("Clave");
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        txbMostrarClave.setEditable(false);
+        txbMostrarClave.setColumns(20);
+        txbMostrarClave.setTabSize(0);
+        jScrollPane1.setViewportView(txbMostrarClave);
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel1.setText("Buscando:");
+        lbMostrarBuscando.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        lbMostrarBuscando.setText("Buscando:");
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tblMostrarMostrar.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {},
                 {},
@@ -68,7 +69,7 @@ public class FrmMostrar extends javax.swing.JFrame {
 
             }
         ));
-        jScrollPane2.setViewportView(jTable1);
+        jScrollPane2.setViewportView(tblMostrarMostrar);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -78,20 +79,18 @@ public class FrmMostrar extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(btnMostrarAutores)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(btnMostrarLibros, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(btnMostrarClave, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 279, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(6, 6, 6)
-                                .addComponent(jLabel1)))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING))
+                        .addGap(6, 6, 6)
+                        .addComponent(lbMostrarBuscando)
+                        .addGap(0, 730, Short.MAX_VALUE))
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(btnMostrarAutores)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnMostrarLibros, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnMostrarClave, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane1)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -105,7 +104,7 @@ public class FrmMostrar extends javax.swing.JFrame {
                         .addComponent(btnMostrarClave))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel1)
+                .addComponent(lbMostrarBuscando)
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(17, Short.MAX_VALUE))
@@ -153,10 +152,10 @@ public class FrmMostrar extends javax.swing.JFrame {
     public javax.swing.JButton btnMostrarAutores;
     public javax.swing.JButton btnMostrarClave;
     public javax.swing.JButton btnMostrarLibros;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTextArea jTextArea1;
+    public javax.swing.JLabel lbMostrarBuscando;
+    public javax.swing.JTable tblMostrarMostrar;
+    public javax.swing.JTextArea txbMostrarClave;
     // End of variables declaration//GEN-END:variables
 }

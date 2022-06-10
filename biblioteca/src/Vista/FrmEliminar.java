@@ -28,36 +28,38 @@ public class FrmEliminar extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        btnMostrarAutores = new javax.swing.JButton();
-        btnMostrarLibros = new javax.swing.JButton();
-        btnMostrarClave = new javax.swing.JButton();
+        jopEliminarAlerta = new javax.swing.JOptionPane();
+        btnEliminarAutores = new javax.swing.JButton();
+        btnEliminarLibros = new javax.swing.JButton();
+        btnEliminarClave = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        txaEliminarClave = new javax.swing.JTextArea();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         DefaultTableModel dtm = new DefaultTableModel();
-        jTable1 = new javax.swing.JTable();
+        tbEliminarMostrar = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Mostrar");
 
-        btnMostrarAutores.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        btnMostrarAutores.setText("Autores");
+        btnEliminarAutores.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        btnEliminarAutores.setText("Autores");
 
-        btnMostrarLibros.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        btnMostrarLibros.setText("Libros");
+        btnEliminarLibros.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        btnEliminarLibros.setText("Libros");
 
-        btnMostrarClave.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        btnMostrarClave.setText("Clave");
+        btnEliminarClave.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        btnEliminarClave.setText("Clave");
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        txaEliminarClave.setEditable(false);
+        txaEliminarClave.setColumns(20);
+        txaEliminarClave.setRows(5);
+        jScrollPane1.setViewportView(txaEliminarClave);
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel1.setText("Buscando:");
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tbEliminarMostrar.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {},
                 {},
@@ -68,7 +70,7 @@ public class FrmEliminar extends javax.swing.JFrame {
 
             }
         ));
-        jScrollPane2.setViewportView(jTable1);
+        jScrollPane2.setViewportView(tbEliminarMostrar);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -80,11 +82,11 @@ public class FrmEliminar extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(btnMostrarAutores)
+                                .addComponent(btnEliminarAutores)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(btnMostrarLibros, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(btnEliminarLibros, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(btnMostrarClave, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(btnEliminarClave, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 279, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
@@ -100,9 +102,9 @@ public class FrmEliminar extends javax.swing.JFrame {
                 .addGap(34, 34, 34)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(btnMostrarAutores)
-                        .addComponent(btnMostrarLibros)
-                        .addComponent(btnMostrarClave))
+                        .addComponent(btnEliminarAutores)
+                        .addComponent(btnEliminarLibros)
+                        .addComponent(btnEliminarClave))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel1)
@@ -151,13 +153,14 @@ public class FrmEliminar extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.JButton btnMostrarAutores;
-    public javax.swing.JButton btnMostrarClave;
-    public javax.swing.JButton btnMostrarLibros;
+    public javax.swing.JButton btnEliminarAutores;
+    public javax.swing.JButton btnEliminarClave;
+    public javax.swing.JButton btnEliminarLibros;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTextArea jTextArea1;
+    public javax.swing.JOptionPane jopEliminarAlerta;
+    public javax.swing.JTable tbEliminarMostrar;
+    public javax.swing.JTextArea txaEliminarClave;
     // End of variables declaration//GEN-END:variables
 }
