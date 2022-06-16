@@ -25,7 +25,7 @@ public class Conector {
     private String cadena = ""; //Concatenacion de los anteriores
     
     //Declaracion de objetos para la conexion
-    Connection connection;
+    public Connection connection;
     Statement statement;
     
     //Declaracion de metodos para conexion

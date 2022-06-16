@@ -7,6 +7,11 @@ package Modelo;
 import Conexion.Conector;
 import java.sql.ResultSet;
 import java.util.ArrayList;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.JasperReport;
+import net.sf.jasperreports.engine.util.JRLoader;
+import net.sf.jasperreports.view.JasperViewer;
 
 /**
  * Mezcla de codigo Java y Sql
@@ -14,6 +19,9 @@ import java.util.ArrayList;
  */
 public class PaisDAO implements ConsultasPais {
 
+    //Par poder utilizar en el metodo reporte
+    public JasperViewer jv;
+    
     @Override
     public boolean insertar(PaisVO p) {
         //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
@@ -110,5 +118,29 @@ public class PaisDAO implements ConsultasPais {
             c.desconectar();
         }
         c.desconectar();
+    }
+
+    //Para los reportes
+    @Override
+    public void reporte() {
+        //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        Conector c = new Conector();
+        try {
+            c.conectar();
+            //Definir una variable que encuentra el reporte
+            JasperReport reporte;
+            //Ruta del Reporte
+            String ruta = "C:\\Users\\bboteo\\Documents\\gitHubRepositorio\\Java_NetBeans\\ConectorCompleto2022\\src\\Reportes\\reportePaises.jasper";
+            //String ruta = "src\\Reportes\\reportePaises.jasper";
+            
+            //Asignacion de ruta
+            reporte = (JasperReport) JRLoader.loadObjectFromFile(ruta);
+            JasperPrint jp = JasperFillManager.fillReport(ruta, null, c.connection);
+            JasperViewer jv = new JasperViewer(jp, false);
+            this.jv = jv;        
+        } catch (Exception e) {
+            System.err.println("Error en metodo Reporte: "+e.getMessage());
+            c.desconectar();
+        }
     }
 }

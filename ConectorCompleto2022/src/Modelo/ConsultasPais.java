@@ -15,4 +15,5 @@ public interface ConsultasPais {
     public ArrayList<PaisVO> consultar();
     public void eliminar(PaisVO p);
     public void actualizar(PaisVO p);
+    public void reporte();
 }

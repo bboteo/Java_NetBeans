@@ -30,6 +30,7 @@ public class ControladorMostrar implements ActionListener, WindowListener {
         this.pdao = pdao;
         
         vMo.btnMostrarCancelar.addActionListener(this);
+        vMo.btnVerReporte.addActionListener(this);
         vMo.addWindowListener(this);
     }
     
@@ -60,12 +61,21 @@ public class ControladorMostrar implements ActionListener, WindowListener {
         
     }
     
+    private void reporte(){
+        pdao.reporte();
+        pdao.jv.setDefaultCloseOperation(vMo.DISPOSE_ON_CLOSE);
+        pdao.jv.setVisible(true);
+        
+    }
     
     @Override
     public void actionPerformed(ActionEvent e) {
         //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
         if(e.getSource()==vMo.btnMostrarCancelar){
             vMo.dispose();
+        }
+        if(e.getSource()==vMo.btnVerReporte){
+            this.reporte();
         }
     }
 
