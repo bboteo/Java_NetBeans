@@ -1,20 +1,55 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
- */
+
 package juegotrivia;
 
-/**
- *
- * @author bboteo
- */
+import Controlador.ControladorAdministrador;
+import Controlador.ControladorLogin;
+import Modelo.BitacoraDAO;
+import Modelo.BitacoraVO;
+import Modelo.EstadoDAO;
+import Modelo.EstadoVO;
+import Modelo.PunteoDAO;
+import Modelo.PunteoVO;
+import Modelo.TipoUsuarioDAO;
+import Modelo.TipoUsuarioVO;
+import Modelo.UsuarioDAO;
+import Modelo.UsuarioVO;
+import Vista.FrmAdministrador;
+import Vista.FrmJugadorAvanzado;
+import Vista.FrmJugadorIntermedio;
+import Vista.FrmJugadorPrincipiante;
+import Vista.FrmLogin;
+
 public class JuegoTrivia {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-        // TODO code application logic here
+        //Vista
+        FrmLogin fLo = new FrmLogin();
+        FrmAdministrador fAd = new FrmAdministrador();
+        FrmJugadorPrincipiante fJp = new FrmJugadorPrincipiante();
+        FrmJugadorIntermedio fJi = new FrmJugadorIntermedio();
+        FrmJugadorAvanzado fJa = new FrmJugadorAvanzado();
+        
+        //Modelo
+        BitacoraDAO bdao = new BitacoraDAO();
+        BitacoraVO dvo = new BitacoraVO();
+        EstadoDAO edao = new EstadoDAO();
+        EstadoVO evo = new EstadoVO();
+        PunteoDAO pdao = new PunteoDAO();
+        PunteoVO pvo = new PunteoVO();
+        TipoUsuarioDAO tdao = new TipoUsuarioDAO();
+        TipoUsuarioVO tvo = new TipoUsuarioVO();
+        UsuarioDAO udao = new UsuarioDAO();
+        UsuarioVO uvo = new UsuarioVO();
+        
+        //controlador
+        ControladorLogin cLo = new ControladorLogin(fLo, fAd, fJp, fJi, fJa, udao, uvo);
+        ControladorAdministrador cAd = new ControladorAdministrador(fAd, udao, uvo, tdao, tvo, pdao, pvo, edao, evo, bdao, dvo);
+        
+        //Iniciar la aplicacion
+        fLo.setVisible(true);
+        fLo.setLocationRelativeTo(null);
+        fLo.setResizable(false);
+        
     }
     
 }

@@ -20,6 +20,7 @@ public class FrmAdministrador extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jopAdminMensaje = new javax.swing.JOptionPane();
         lblAdminUsuario = new javax.swing.JLabel();
         jcbAdminLista = new javax.swing.JComboBox<>();
         txbAdminUsuario = new javax.swing.JTextField();
@@ -47,6 +48,11 @@ public class FrmAdministrador extends javax.swing.JFrame {
         lblAdminUsuario.setText("Usuario");
 
         jcbAdminLista.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jcbAdminLista.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jcbAdminListaActionPerformed(evt);
+            }
+        });
 
         txbAdminUsuario.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
@@ -145,7 +151,7 @@ public class FrmAdministrador extends javax.swing.JFrame {
                             .addGap(18, 18, 18)
                             .addComponent(btnAdminReporte))
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 570, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(0, 11, Short.MAX_VALUE))
+                .addGap(0, 15, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -153,11 +159,14 @@ public class FrmAdministrador extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblAdminNombre)
-                            .addComponent(txbAdminNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(lblAdminNombre)
+                                .addGap(24, 24, 24))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(txbAdminNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblAdminApellido)
                             .addComponent(txbAdminApellido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
@@ -171,8 +180,8 @@ public class FrmAdministrador extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblAdminContrasena)
-                    .addComponent(txbAdminContrasena, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblAdminEdad)
+                    .addComponent(txbAdminContrasena, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txbAdminEdad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -188,6 +197,10 @@ public class FrmAdministrador extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jcbAdminListaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcbAdminListaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jcbAdminListaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -231,6 +244,7 @@ public class FrmAdministrador extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator1;
     public javax.swing.JComboBox<String> jcbAdminEstado;
     public javax.swing.JComboBox<String> jcbAdminLista;
+    public javax.swing.JOptionPane jopAdminMensaje;
     private javax.swing.JLabel lblAdminAccion;
     private javax.swing.JLabel lblAdminApellido;
     private javax.swing.JLabel lblAdminContrasena;

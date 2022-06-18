@@ -326,8 +326,6 @@ public class FrmJugadorAvanzado extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("4).", jpnAvanzadoQ4);
 
-        jpnAvanzadoCabecera.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 0, 0), null));
-
         lblAvanzadoUsuario.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lblAvanzadoUsuario.setForeground(new java.awt.Color(153, 153, 153));
         lblAvanzadoUsuario.setText("Usuario: bboteo");

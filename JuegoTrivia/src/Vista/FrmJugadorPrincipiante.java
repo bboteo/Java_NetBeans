@@ -458,17 +458,15 @@ public class FrmJugadorPrincipiante extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpnPrincipianteQ6Layout.createSequentialGroup()
                         .addComponent(scrPrincipianteQ6, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
-                .addGroup(jpnPrincipianteQ6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnPrincipianteQ6End)
+                .addGroup(jpnPrincipianteQ6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jpnPrincipianteQ6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(txbPrincipianteQ6Res, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(lblPrincipianteQ6Res)))
+                        .addComponent(lblPrincipianteQ6Res))
+                    .addComponent(btnPrincipianteQ6End))
                 .addContainerGap(14, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("6).", jpnPrincipianteQ6);
-
-        jpnPrincipianteCabecera.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 0, 0), null));
 
         lblPrincipianteUsuario.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lblPrincipianteUsuario.setForeground(new java.awt.Color(153, 153, 153));

@@ -8,7 +8,7 @@ CREATE TABLE tbl_usuario (
 	nombre VARCHAR(50) NOT NULL,
 	apellido VARCHAR(50) NOT NULL,
 	edad INT NOT NULL,
-	usuario VARCHAR(10) NOT NULL,
+	usuario VARCHAR(10) NOT NULL UNIQUE,
 	contrasena VARCHAR(50) NOT NULL,
 	fk_estado_id INT NOT NULL,
 	fk_tipo_usuario_id INT NOT NULL,
@@ -105,6 +105,30 @@ INSERT INTO dbjuego.tbl_punteo (punteo) VALUES (0);
 
 INSERT INTO dbjuego.tbl_usuario (nombre,apellido,edad,usuario,contrasena,fk_estado_id,fk_tipo_usuario_id,fk_punteo_id)
 VALUES ("Admin","Admin",0,"admin","admin",1,1,1);
+
+#Probando Querys del software
+SELECT u.id
+FROM dbjuego.tbl_usuario AS u
+WHERE (u.usuario LIKE 'admin');
+
+
+SELECT u.id, u.nombre, u.apellido, u.edad, 
+		u.usuario, u.contrasena, 
+		u.fk_estado_id, u.fk_tipo_usuario_id, u.fk_punteo_id 
+FROM dbjuego.tbl_usuario AS u
+WHERE u.usuario = "admin";
+
+
+#Paquete: Modelo/Class: PunteoDAO/Metodo: consultarPnuevo
+SELECT p.id, p.punteo 
+FROM dbjuego.tbl_punteo AS p
+WHERE id=(SELECT MAX(id) FROM dbjuego.tbl_punteo);
+
+#Paquete< Modelo / Class: UsuarioDAO / Metodo: Consultar usuario
+SELECT u.id, u.nombre, u.apellido, u.edad, u.usuario, u.contrasena, 
+	u.fk_estado_id, u.fk_tipo_usuario_id, u.fk_punteo_id
+FROM dbjuego.tbl_usuario AS u;
+
 
 #Eliminar la base datos
 DROP DATABASE dbjuego;

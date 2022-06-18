@@ -397,8 +397,6 @@ public class FrmJugadorIntermedio extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("5).", jpnIntermedioQ5);
 
-        jpnIntermedioCabecera.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 0, 0), null));
-
         lblIntermedioUsuario.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lblIntermedioUsuario.setForeground(new java.awt.Color(153, 153, 153));
         lblIntermedioUsuario.setText("Usuario: bboteo");

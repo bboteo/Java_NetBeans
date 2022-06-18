@@ -8,4 +8,8 @@ public interface TablaPunteo {
     public ArrayList<PunteoVO> consultarP();
     public boolean eliminarP(PunteoVO p);
     public boolean actualizarP(PunteoVO p);
+    
+    
+    //Consultas Especificas
+    public ArrayList<PunteoVO> consultarPnuevo(PunteoVO p);//Para las asignacion de tablas nuevas
 }

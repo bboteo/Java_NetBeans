@@ -30,7 +30,8 @@ public class FrmLogin extends javax.swing.JFrame {
         lblLoginUsuario = new javax.swing.JLabel();
         lblLoginContrasena = new javax.swing.JLabel();
         txbLoginUsuario = new javax.swing.JTextField();
-        txbLoginContrasena = new javax.swing.JTextField();
+        btnAdminLogin = new javax.swing.JButton();
+        txbLoginContrasena = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Login");
@@ -43,15 +44,21 @@ public class FrmLogin extends javax.swing.JFrame {
 
         txbLoginUsuario.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
+        btnAdminLogin.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        btnAdminLogin.setText("Ingresar");
+
         txbLoginContrasena.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        txbLoginContrasena.setToolTipText("");
-        txbLoginContrasena.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        txbLoginContrasena.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txbLoginContrasenaActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(27, 27, 27)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblLoginUsuario)
@@ -61,6 +68,10 @@ public class FrmLogin extends javax.swing.JFrame {
                     .addComponent(txbLoginUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, 226, Short.MAX_VALUE)
                     .addComponent(txbLoginContrasena))
                 .addGap(29, 29, 29))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(135, 135, 135)
+                .addComponent(btnAdminLogin)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -70,14 +81,20 @@ public class FrmLogin extends javax.swing.JFrame {
                     .addComponent(lblLoginUsuario)
                     .addComponent(txbLoginUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblLoginContrasena)
                     .addComponent(txbLoginContrasena, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(21, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(btnAdminLogin)
+                .addContainerGap(15, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void txbLoginContrasenaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txbLoginContrasenaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txbLoginContrasenaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -115,10 +132,11 @@ public class FrmLogin extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JButton btnAdminLogin;
     public javax.swing.JOptionPane jopLoginMensaje;
-    public javax.swing.JLabel lblLoginContrasena;
-    public javax.swing.JLabel lblLoginUsuario;
-    public javax.swing.JTextField txbLoginContrasena;
+    private javax.swing.JLabel lblLoginContrasena;
+    private javax.swing.JLabel lblLoginUsuario;
+    public javax.swing.JPasswordField txbLoginContrasena;
     public javax.swing.JTextField txbLoginUsuario;
     // End of variables declaration//GEN-END:variables
 }
