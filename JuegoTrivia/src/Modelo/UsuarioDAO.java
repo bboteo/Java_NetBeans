@@ -71,7 +71,27 @@ public class UsuarioDAO implements TablaUsuario{
 
     @Override
     public boolean actualizarU(UsuarioVO u) {
-        return false;
+        Conector c = new Conector();
+        try {
+            c.conectar();
+            String query = "UPDATE dbjuego.tbl_usuario AS u " +
+                            "SET " +
+                            "u.nombre = '"+u.getNombre()+"'," +
+                            "u.apellido = '"+u.getApellido()+"'," +
+                            "u.edad = "+u.getEdad()+"," +
+                            "u.usuario = '"+u.getUsuario()+"'," +
+                            "u.contrasena = '"+u.getContrasena()+"'," +
+                            "u.fk_estado_id= "+u.getFkEstadoId()+"," +
+                            "u.fk_tipo_usuario_id = "+u.getFkTipoUsuarioId()+"," +
+                            "u.fk_punteo_id = "+u.getFkPunteoId()+" " +
+                            "WHERE u.id = "+u.getId();
+            c.consultasMultiples(query);
+        } catch (Exception e) {
+            System.err.println("Erro [ActualizarU]: "+e);
+            c.desconectar();
+            return false;
+        }
+        return true;
     }
 
     @Override
@@ -151,6 +171,7 @@ public class UsuarioDAO implements TablaUsuario{
             result = c.consultaDatos(query);
             
             while(result.next()){
+                //UsuarioVO u1 = new UsuarioVO();
                 u.setId(result.getInt(1));
                 u.setNombre(result.getString(2));
                 u.setApellido(result.getString(3));
@@ -170,6 +191,50 @@ public class UsuarioDAO implements TablaUsuario{
         return info;
     }
 
+    //Consultas JOIN
 
+    @Override
+    public ArrayList<UsuarioCVO> consultarUjoin(UsuarioVO u, EstadoVO e, TipoUsuarioVO tu, PunteoVO p) {
+        ArrayList<UsuarioCVO> info = new ArrayList<>();     
+        ResultSet result = null;
+        Conector c = new Conector();
+        
+        try {
+            c.conectar();
+            String query="SELECT "
+                    + "u.id, u.nombre, u.apellido, u.edad, u.usuario, u.contrasena, "
+                    + "tu.nombre, "
+                    + "e.nombre, "
+                    + "p.punteo " 
+                    + "FROM dbjuego.tbl_usuario AS u INNER JOIN dbjuego.tbl_tipo_usuario AS tu "
+                    + "ON tu.id = u.fk_tipo_usuario_id INNER JOIN dbjuego.tbl_estado AS e "
+                    + "ON e.id = u.fk_estado_id INNER JOIN dbjuego.tbl_punteo AS p "
+                    + "ON p.id = u.fk_punteo_id";
+            result = c.consultaDatos(query);
+            
+            while(result.next()){
+                UsuarioCVO uc = new UsuarioCVO();
+                uc.setId(result.getInt(1));
+                uc.setNombre(result.getString(2));
+                uc.setApellido(result.getString(3));
+                uc.setEdad(result.getInt(4));
+                uc.setUsuario(result.getString(5));
+                uc.setContrasena(result.getString(6));
+                uc.setEstado(result.getString(7));
+                uc.setTipoUsuario(result.getString(8));
+                uc.setPunteo(result.getInt(9));
+            
+                info.add(uc);
+                                
+            }
+            
+        } catch (Exception e1) {
+            System.err.println("Error [ConsultarUexacto]"+e1);
+            c.desconectar();
+        }
+        
+        return info;
     
+    } 
+
 }

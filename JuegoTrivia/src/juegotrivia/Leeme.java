@@ -10,6 +10,8 @@ public class Leeme {
     Viernes 10:00-12:00 (2) - Progamacion en Netbeans
     Viernes 14:00-15:00 (2)
     Viernes 17:00-21:00 (3)
+    Domingo 10:00-12:00 (2)
+    Lunes 14:30 - 
     
     */
 }

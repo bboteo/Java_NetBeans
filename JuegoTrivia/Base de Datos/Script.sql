@@ -130,5 +130,35 @@ SELECT u.id, u.nombre, u.apellido, u.edad, u.usuario, u.contrasena,
 FROM dbjuego.tbl_usuario AS u;
 
 
+#Paquete: Modelo / Class:UsuarioDAO / Metodo: ActualizarU
+UPDATE dbjuego.tbl_usuario AS u
+SET 
+u.nombre = 'Giancarlo', 
+u.apellido = 'Boteo', 
+u.edad = 100, 
+u.usuario = 'bboteo', 
+u.contrasena = '1234',
+u.fk_estado_id= 1,
+u.fk_tipo_usuario_id = 2,
+u.fk_punteo_id = 3 
+WHERE u.id = 2;
+
+#Paquete: Modelo / Class:UsuarioDAO / Metrodo: ConsultarUjoin
+SELECT u.id, u.nombre, u.apellido, u.edad, u.usuario, u.contrasena, tu.nombre, e.nombre, p.punteo
+FROM dbjuego.tbl_usuario AS u INNER JOIN dbjuego.tbl_tipo_usuario AS tu
+	ON tu.id = u.fk_tipo_usuario_id INNER JOIN dbjuego.tbl_estado AS e 
+	ON e.id = u.fk_estado_id INNER JOIN dbjuego.tbl_punteo AS p
+	ON p.id = u.fk_punteo_id
+
+#Paquete: Modelo / Class:EstadoDAO / Metodo: ConsultarE
+SELECT e.id, e.nombre, e.descripcion
+FROM dbjuego.tbl_estado AS e
+WHERE e.id = 1;
+
+#Paquete: Modelo / Class:TipoUsuarioDAO / Metodo:ConsultarTu
+SELECT tu.id, tu.nombre, tu.descripcion
+FROM dbjuego.tbl_tipo_usuario AS tu
+
+
 #Eliminar la base datos
 DROP DATABASE dbjuego;

@@ -8,4 +8,7 @@ public interface TablaEstado {
     public ArrayList<EstadoVO> consultarE();
     public boolean eliminarE(EstadoVO e);
     public boolean actualizarE(EstadoVO e);
+    
+    //Consultas Especificas
+    public ArrayList<EstadoVO> consultarEexacto(EstadoVO e);
 }
