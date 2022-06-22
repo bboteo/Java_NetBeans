@@ -32,7 +32,18 @@ public class PunteoDAO implements TablaPunteo{
 
     @Override
     public boolean eliminarP(PunteoVO p) {
-        return false;
+        Conector c = new Conector();
+        try {
+            c.conectar();
+            String query = "DELETE FROM dbjuego.tbl_punteo " +
+                           "WHERE id = "+p.getId();
+            c.consultasMultiples(query);
+        } catch (Exception e) {
+            System.err.println("Error [EliminarP]: "+e);
+            c.desconectar();
+            return false;
+        }
+        return true;
     }
 
     @Override

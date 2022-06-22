@@ -47,7 +47,7 @@ public class FrmAdministrador extends javax.swing.JFrame {
         jlbAdminEstado = new javax.swing.JLabel();
         jlbAdminTipoJugador = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Menu Principal - Administrador");
 
         lblAdminUsuario.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -107,7 +107,8 @@ public class FrmAdministrador extends javax.swing.JFrame {
         jScrollPane1.setViewportView(tblAdminMostrar);
 
         jlbAdminModificar.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jlbAdminModificar.setText("Haga Doble Click sobre el usuario que desea modificar");
+        jlbAdminModificar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jlbAdminModificar.setText("Instrucciones para Actualizar y Modificar");
 
         javax.swing.GroupLayout jpnAdminActualizarLayout = new javax.swing.GroupLayout(jpnAdminActualizar);
         jpnAdminActualizar.setLayout(jpnAdminActualizarLayout);
@@ -115,13 +116,12 @@ public class FrmAdministrador extends javax.swing.JFrame {
             jpnAdminActualizarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jpnAdminActualizarLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jpnAdminActualizarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1)
-                    .addGroup(jpnAdminActualizarLayout.createSequentialGroup()
-                        .addGap(63, 63, 63)
-                        .addComponent(jlbAdminModificar)
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addComponent(jScrollPane1)
                 .addContainerGap())
+            .addGroup(jpnAdminActualizarLayout.createSequentialGroup()
+                .addGap(117, 117, 117)
+                .addComponent(jlbAdminModificar)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jpnAdminActualizarLayout.setVerticalGroup(
             jpnAdminActualizarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -133,7 +133,7 @@ public class FrmAdministrador extends javax.swing.JFrame {
                 .addContainerGap(23, Short.MAX_VALUE))
         );
 
-        jpnAdminAvanzado.setBackground(new java.awt.Color(255, 153, 0));
+        jpnAdminAvanzado.setBackground(new java.awt.Color(204, 204, 255));
 
         jcbAdminEstado.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
@@ -143,7 +143,7 @@ public class FrmAdministrador extends javax.swing.JFrame {
         jlbAdminEstado.setText("Estado");
 
         jlbAdminTipoJugador.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jlbAdminTipoJugador.setText("Tipo Jugador");
+        jlbAdminTipoJugador.setText("Tipo Usuario");
 
         javax.swing.GroupLayout jpnAdminAvanzadoLayout = new javax.swing.GroupLayout(jpnAdminAvanzado);
         jpnAdminAvanzado.setLayout(jpnAdminAvanzadoLayout);
@@ -162,14 +162,14 @@ public class FrmAdministrador extends javax.swing.JFrame {
         );
         jpnAdminAvanzadoLayout.setVerticalGroup(
             jpnAdminAvanzadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpnAdminAvanzadoLayout.createSequentialGroup()
-                .addContainerGap(12, Short.MAX_VALUE)
+            .addGroup(jpnAdminAvanzadoLayout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(jpnAdminAvanzadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jcbAdminEstado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jlbAdminEstado)
                     .addComponent(jlbAdminTipoJugador)
                     .addComponent(jcbAdminTipoJugador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -254,7 +254,7 @@ public class FrmAdministrador extends javax.swing.JFrame {
                     .addComponent(txbAdminEdad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jpnAdminAvanzado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(15, 15, 15)
+                .addGap(18, 18, 18)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)

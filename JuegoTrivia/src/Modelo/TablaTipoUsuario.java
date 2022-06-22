@@ -8,4 +8,7 @@ public interface TablaTipoUsuario {
     public ArrayList<TipoUsuarioVO> consultarTu();
     public boolean eliminarTu(TipoUsuarioVO tu);
     public boolean actualizarTu(TipoUsuarioVO tu);
+    
+    //Consultas Especificas
+    public ArrayList<TipoUsuarioVO> consultarTuexacto(TipoUsuarioVO tu);
 }

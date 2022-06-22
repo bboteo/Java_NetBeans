@@ -65,11 +65,11 @@ public class EstadoDAO implements TablaEstado{
             result = c.consultaDatos(query);
             
             while(result.next()){
-                EstadoVO es = new EstadoVO();
-                es.setId(result.getInt(1));
-                es.setNombre(result.getString(2));
-                es.setDescrip(result.getString(3));
-                info.add(es);
+                //EstadoVO es = new EstadoVO();
+                e.setId(result.getInt(1));
+                e.setNombre(result.getString(2));
+                e.setDescrip(result.getString(3));
+                info.add(e);
             }
             
         } catch (Exception er) {

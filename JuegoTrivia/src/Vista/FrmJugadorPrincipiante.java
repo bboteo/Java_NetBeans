@@ -40,10 +40,10 @@ public class FrmJugadorPrincipiante extends javax.swing.JFrame {
         lblPrincipianteQ2Peso1 = new javax.swing.JLabel();
         lblPrincipianteQ2Peso2 = new javax.swing.JLabel();
         scrPrincipianteQ2 = new javax.swing.JScrollPane();
-        txaPrincipianteQ2Pregunta2 = new javax.swing.JTextArea();
+        txaPrincipianteQ2Pregunta = new javax.swing.JTextArea();
         lblPrincipianteQ2Res = new javax.swing.JLabel();
         txbPrincipianteQ2Res = new javax.swing.JTextField();
-        btnPrincipianteQ2Next1 = new javax.swing.JButton();
+        btnPrincipianteQ2Next = new javax.swing.JButton();
         jpnPrincipianteQ3 = new javax.swing.JPanel();
         lblPrincipianteQ3Peso1 = new javax.swing.JLabel();
         lblPrincipianteQ3Peso2 = new javax.swing.JLabel();
@@ -51,7 +51,7 @@ public class FrmJugadorPrincipiante extends javax.swing.JFrame {
         txaPrincipianteQ3Pregunta = new javax.swing.JTextArea();
         lblPrincipianteQ3Res = new javax.swing.JLabel();
         txbPrincipianteQ3Res = new javax.swing.JTextField();
-        btnPrincipianteQ3Next2 = new javax.swing.JButton();
+        btnPrincipianteQ3Next = new javax.swing.JButton();
         jpnPrincipianteQ4 = new javax.swing.JPanel();
         lblPrincipianteQ4Peso1 = new javax.swing.JLabel();
         lblPrincipianteQ4Peso2 = new javax.swing.JLabel();
@@ -86,8 +86,11 @@ public class FrmJugadorPrincipiante extends javax.swing.JFrame {
         tbxPrincipianteLv3 = new javax.swing.JTextField();
         lblPrincipiantePuntos = new javax.swing.JLabel();
         txbPrincipiantePuntos = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
+        bproJugadorPrincipiante = new javax.swing.JProgressBar();
+        btnPrincipianteRepetir = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Jugador - Principiante");
 
         lblPrincipianteQ1Peso.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -98,6 +101,7 @@ public class FrmJugadorPrincipiante extends javax.swing.JFrame {
 
         txaPrincipianteQ1Pregunta.setEditable(false);
         txaPrincipianteQ1Pregunta.setColumns(20);
+        txaPrincipianteQ1Pregunta.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         txaPrincipianteQ1Pregunta.setRows(5);
         scrPrincipianteQ1.setViewportView(txaPrincipianteQ1Pregunta);
 
@@ -159,18 +163,19 @@ public class FrmJugadorPrincipiante extends javax.swing.JFrame {
         lblPrincipianteQ2Peso2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lblPrincipianteQ2Peso2.setText("1/6");
 
-        txaPrincipianteQ2Pregunta2.setEditable(false);
-        txaPrincipianteQ2Pregunta2.setColumns(20);
-        txaPrincipianteQ2Pregunta2.setRows(5);
-        scrPrincipianteQ2.setViewportView(txaPrincipianteQ2Pregunta2);
+        txaPrincipianteQ2Pregunta.setEditable(false);
+        txaPrincipianteQ2Pregunta.setColumns(20);
+        txaPrincipianteQ2Pregunta.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        txaPrincipianteQ2Pregunta.setRows(5);
+        scrPrincipianteQ2.setViewportView(txaPrincipianteQ2Pregunta);
 
         lblPrincipianteQ2Res.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lblPrincipianteQ2Res.setText("Respuesta");
 
         txbPrincipianteQ2Res.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
-        btnPrincipianteQ2Next1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        btnPrincipianteQ2Next1.setText("Siguiente");
+        btnPrincipianteQ2Next.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        btnPrincipianteQ2Next.setText("Siguiente");
 
         javax.swing.GroupLayout jpnPrincipianteQ2Layout = new javax.swing.GroupLayout(jpnPrincipianteQ2);
         jpnPrincipianteQ2.setLayout(jpnPrincipianteQ2Layout);
@@ -184,7 +189,7 @@ public class FrmJugadorPrincipiante extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(txbPrincipianteQ2Res, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(btnPrincipianteQ2Next1))
+                        .addComponent(btnPrincipianteQ2Next))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpnPrincipianteQ2Layout.createSequentialGroup()
                         .addGroup(jpnPrincipianteQ2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblPrincipianteQ2Peso1)
@@ -210,7 +215,7 @@ public class FrmJugadorPrincipiante extends javax.swing.JFrame {
                     .addGroup(jpnPrincipianteQ2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(txbPrincipianteQ2Res, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(lblPrincipianteQ2Res))
-                    .addComponent(btnPrincipianteQ2Next1))
+                    .addComponent(btnPrincipianteQ2Next))
                 .addContainerGap(14, Short.MAX_VALUE))
         );
 
@@ -224,6 +229,7 @@ public class FrmJugadorPrincipiante extends javax.swing.JFrame {
 
         txaPrincipianteQ3Pregunta.setEditable(false);
         txaPrincipianteQ3Pregunta.setColumns(20);
+        txaPrincipianteQ3Pregunta.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         txaPrincipianteQ3Pregunta.setRows(5);
         scrPrincipianteQ3.setViewportView(txaPrincipianteQ3Pregunta);
 
@@ -232,8 +238,8 @@ public class FrmJugadorPrincipiante extends javax.swing.JFrame {
 
         txbPrincipianteQ3Res.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
-        btnPrincipianteQ3Next2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        btnPrincipianteQ3Next2.setText("Siguiente");
+        btnPrincipianteQ3Next.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        btnPrincipianteQ3Next.setText("Siguiente");
 
         javax.swing.GroupLayout jpnPrincipianteQ3Layout = new javax.swing.GroupLayout(jpnPrincipianteQ3);
         jpnPrincipianteQ3.setLayout(jpnPrincipianteQ3Layout);
@@ -247,7 +253,7 @@ public class FrmJugadorPrincipiante extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(txbPrincipianteQ3Res, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(btnPrincipianteQ3Next2))
+                        .addComponent(btnPrincipianteQ3Next))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpnPrincipianteQ3Layout.createSequentialGroup()
                         .addGroup(jpnPrincipianteQ3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblPrincipianteQ3Peso1)
@@ -273,7 +279,7 @@ public class FrmJugadorPrincipiante extends javax.swing.JFrame {
                     .addGroup(jpnPrincipianteQ3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(txbPrincipianteQ3Res, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(lblPrincipianteQ3Res))
-                    .addComponent(btnPrincipianteQ3Next2))
+                    .addComponent(btnPrincipianteQ3Next))
                 .addContainerGap(14, Short.MAX_VALUE))
         );
 
@@ -287,6 +293,7 @@ public class FrmJugadorPrincipiante extends javax.swing.JFrame {
 
         txaPrincipianteQ4Pregunta.setEditable(false);
         txaPrincipianteQ4Pregunta.setColumns(20);
+        txaPrincipianteQ4Pregunta.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         txaPrincipianteQ4Pregunta.setRows(5);
         scrPrincipianteQ4.setViewportView(txaPrincipianteQ4Pregunta);
 
@@ -350,6 +357,7 @@ public class FrmJugadorPrincipiante extends javax.swing.JFrame {
 
         txaPrincipianteQ5Pregunta.setEditable(false);
         txaPrincipianteQ5Pregunta.setColumns(20);
+        txaPrincipianteQ5Pregunta.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         txaPrincipianteQ5Pregunta.setRows(5);
         scrPrincipianteQ5.setViewportView(txaPrincipianteQ5Pregunta);
 
@@ -413,6 +421,7 @@ public class FrmJugadorPrincipiante extends javax.swing.JFrame {
 
         txaPrincipianteQ6Pregunta.setEditable(false);
         txaPrincipianteQ6Pregunta.setColumns(20);
+        txaPrincipianteQ6Pregunta.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         txaPrincipianteQ6Pregunta.setRows(5);
         scrPrincipianteQ6.setViewportView(txaPrincipianteQ6Pregunta);
 
@@ -470,7 +479,7 @@ public class FrmJugadorPrincipiante extends javax.swing.JFrame {
 
         lblPrincipianteUsuario.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lblPrincipianteUsuario.setForeground(new java.awt.Color(153, 153, 153));
-        lblPrincipianteUsuario.setText("Usuario: bboteo");
+        lblPrincipianteUsuario.setText("Usuario:");
 
         lblPrincipianteIntento.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lblPrincipianteIntento.setForeground(new java.awt.Color(153, 153, 153));
@@ -487,6 +496,7 @@ public class FrmJugadorPrincipiante extends javax.swing.JFrame {
         txbPrincipianteLv1.setEditable(false);
         txbPrincipianteLv1.setBackground(new java.awt.Color(255, 255, 0));
         txbPrincipianteLv1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        txbPrincipianteLv1.setText("          ");
         txbPrincipianteLv1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txbPrincipianteLv1ActionPerformed(evt);
@@ -495,6 +505,7 @@ public class FrmJugadorPrincipiante extends javax.swing.JFrame {
 
         txbPrincipianteLv2.setEditable(false);
         txbPrincipianteLv2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        txbPrincipianteLv2.setText("          ");
         txbPrincipianteLv2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txbPrincipianteLv2ActionPerformed(evt);
@@ -503,6 +514,7 @@ public class FrmJugadorPrincipiante extends javax.swing.JFrame {
 
         tbxPrincipianteLv3.setEditable(false);
         tbxPrincipianteLv3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        tbxPrincipianteLv3.setText("          ");
         tbxPrincipianteLv3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tbxPrincipianteLv3ActionPerformed(evt);
@@ -562,23 +574,47 @@ public class FrmJugadorPrincipiante extends javax.swing.JFrame {
                 .addContainerGap(16, Short.MAX_VALUE))
         );
 
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel1.setText("Reiniciar la Prueba");
+
+        bproJugadorPrincipiante.setBackground(new java.awt.Color(255, 255, 255));
+        bproJugadorPrincipiante.setForeground(new java.awt.Color(255, 255, 0));
+
+        btnPrincipianteRepetir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/sincronizar.png"))); // NOI18N
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jpnPrincipianteCabecera, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jTabbedPane1))
-                .addContainerGap(12, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(jpnPrincipianteCabecera, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jTabbedPane1, javax.swing.GroupLayout.Alignment.LEADING))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(btnPrincipianteRepetir)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(bproJugadorPrincipiante, javax.swing.GroupLayout.PREFERRED_SIZE, 422, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(15, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jpnPrincipianteCabecera, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(17, 17, 17)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel1)
+                            .addComponent(bproJugadorPrincipiante, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnPrincipianteRepetir)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -633,13 +669,16 @@ public class FrmJugadorPrincipiante extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JProgressBar bproJugadorPrincipiante;
     public javax.swing.JButton btnPrincipianteQ1Next;
-    public javax.swing.JButton btnPrincipianteQ2Next1;
-    public javax.swing.JButton btnPrincipianteQ3Next2;
+    public javax.swing.JButton btnPrincipianteQ2Next;
+    public javax.swing.JButton btnPrincipianteQ3Next;
     public javax.swing.JButton btnPrincipianteQ4Next;
     public javax.swing.JButton btnPrincipianteQ5Next;
     public javax.swing.JButton btnPrincipianteQ6End;
-    private javax.swing.JTabbedPane jTabbedPane1;
+    public javax.swing.JButton btnPrincipianteRepetir;
+    private javax.swing.JLabel jLabel1;
+    public javax.swing.JTabbedPane jTabbedPane1;
     public javax.swing.JOptionPane jopPrincipianteMensaje;
     private javax.swing.JPanel jpnPrincipianteCabecera;
     public javax.swing.JPanel jpnPrincipianteQ1;
@@ -669,7 +708,7 @@ public class FrmJugadorPrincipiante extends javax.swing.JFrame {
     private javax.swing.JLabel lblPrincipianteQ6Peso1;
     private javax.swing.JLabel lblPrincipianteQ6Peso2;
     private javax.swing.JLabel lblPrincipianteQ6Res;
-    private javax.swing.JLabel lblPrincipianteUsuario;
+    public javax.swing.JLabel lblPrincipianteUsuario;
     public javax.swing.JScrollPane scrPrincipianteQ1;
     public javax.swing.JScrollPane scrPrincipianteQ2;
     public javax.swing.JScrollPane scrPrincipianteQ3;
@@ -678,7 +717,7 @@ public class FrmJugadorPrincipiante extends javax.swing.JFrame {
     public javax.swing.JScrollPane scrPrincipianteQ6;
     public javax.swing.JTextField tbxPrincipianteLv3;
     public javax.swing.JTextArea txaPrincipianteQ1Pregunta;
-    public javax.swing.JTextArea txaPrincipianteQ2Pregunta2;
+    public javax.swing.JTextArea txaPrincipianteQ2Pregunta;
     public javax.swing.JTextArea txaPrincipianteQ3Pregunta;
     public javax.swing.JTextArea txaPrincipianteQ4Pregunta;
     public javax.swing.JTextArea txaPrincipianteQ5Pregunta;

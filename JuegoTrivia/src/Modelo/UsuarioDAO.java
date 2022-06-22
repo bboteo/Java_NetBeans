@@ -66,7 +66,18 @@ public class UsuarioDAO implements TablaUsuario{
 
     @Override
     public boolean eliminarU(UsuarioVO u) {
-        return false;
+        Conector c = new Conector();
+        try {
+            c.conectar();
+            String query = "DELETE FROM dbjuego.tbl_usuario " +
+                           "WHERE id = "+u.getId();
+            c.consultasMultiples(query);
+        } catch (Exception e) {
+            System.err.println("Error [EliminarU]: "+e);
+            c.desconectar();
+            return false;
+        }
+        return true;
     }
 
     @Override
@@ -108,6 +119,7 @@ public class UsuarioDAO implements TablaUsuario{
             result = c.consultaDatos(query);
             
             while(result.next()){
+                u.setId(result.getInt(1));
                 row++;
             }
             
@@ -133,19 +145,17 @@ public class UsuarioDAO implements TablaUsuario{
             c.conectar();
             String query = "SELECT u.id "+
                            "FROM dbjuego.tbl_usuario AS u "+
-                           "WHERE u.usuario LIKE '"+
+                           "WHERE u.contrasena LIKE '"+
                             u.getContrasena()+"'";
             
             result = c.consultaDatos(query);
             
             while(result.next()){
-                u.setId(result.getInt(1));
                 row++;
             }
             
             if(row==0) return false; //Cero coincidencias encontradas
-            if(row==1) return true; //Una coincidencia encontrada
-            if(row>1) return false; //hay usuarios duplicados
+            if(row >= 1) return true; //Por lo menos una coincidencia encontrada
             
         } catch (Exception e) {
             System.err.println("Error [ValidarC]"+e);

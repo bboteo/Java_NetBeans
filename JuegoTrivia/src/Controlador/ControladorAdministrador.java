@@ -44,7 +44,7 @@ public class ControladorAdministrador implements ActionListener, MouseListener, 
     //Variables locales
     private int humanEr = 0;//Para que el jcbox solo seleccione una vez
     private boolean jcbselect = true;//Para que el jcbox ponga la seleccion
-    private String guarAct = "";
+    private String tarea = "";
 
     public ControladorAdministrador(FrmAdministrador vAd, UsuarioDAO udao, UsuarioVO uvo, UsuarioCVO ucvo,
             TipoUsuarioDAO tdao, TipoUsuarioVO tvo, PunteoDAO pdao, PunteoVO pvo,
@@ -73,14 +73,14 @@ public class ControladorAdministrador implements ActionListener, MouseListener, 
     }
     
     private void inicializarF(){
+        vAd.jpnAdminAvanzado.setVisible(false);
         vAd.jcbAdminEstado.setVisible(false);
         vAd.btnAdminGuardar.setVisible(false);
         vAd.btnAdminReporte.setVisible(false);
         vAd.tblAdminMostrar.setVisible(false);
         vAd.jpnAdminActualizar.setVisible(false);
         vAd.jlbAdminModificar.setVisible(false);
-        vAd.jpnAdminAvanzado.setVisible(false);
-        
+                
         //Desactivar los txb hasta que se quiera modificar
         vAd.txbAdminNombre.setEditable(false);
         vAd.txbAdminNombre.setText("");
@@ -96,13 +96,19 @@ public class ControladorAdministrador implements ActionListener, MouseListener, 
         //Agregar las tareas al jcb
         vAd.jcbAdminLista.removeAllItems();
         vAd.jcbAdminLista.addItem("Seleccione su tarea");//item 0
-        vAd.jcbAdminLista.addItem("Ingresar Usuario");//item 1
-        vAd.jcbAdminLista.addItem("Borrar Usuario");//item 2
-        vAd.jcbAdminLista.addItem("Modificar Usuario");//item 3
-        vAd.jcbAdminLista.addItem("Mostrar Usuarios");//item 4
+        vAd.jcbAdminLista.addItem("(C) Crar Usuario");//item 1
+        vAd.jcbAdminLista.addItem("(R) Mostrar Usuarios");//item 2
+        vAd.jcbAdminLista.addItem("(U) Modificar Usuario");//item 3
+        vAd.jcbAdminLista.addItem("(D) Borrar Usuario");//item 4
         
-        jcbAvanzado();
-        
+        //Agregar items al jcb de estado y nivel
+        vAd.jcbAdminEstado.setEnabled(true);
+        vAd.jcbAdminTipoJugador.setEnabled(true);
+        vAd.jcbAdminEstado.removeAllItems();
+        vAd.jcbAdminTipoJugador.removeAllItems();
+        vAd.jcbAdminEstado.setEnabled(false);
+        vAd.jcbAdminTipoJugador.setEnabled(false);
+                
     }
     
     private void ingresarU(){
@@ -119,20 +125,19 @@ public class ControladorAdministrador implements ActionListener, MouseListener, 
         vAd.btnAdminGuardar.setVisible(true);
                         
         humanEr=0;
-        //jcbselect = true;
     }
     
     private boolean guardarDatos(){
         ArrayList<PunteoVO> punteo = new ArrayList<>();
         
-        //Validar que todos los datos esten completos
+        //Validar que todos los datos esten completos solo para usuarios nuevos
         if(vAd.txbAdminNombre.getText().isEmpty() || 
                 vAd.txbAdminApellido.getText().isEmpty() || 
                 vAd.txbAdminContrasena.getText().isEmpty() || 
                 vAd.txbAdminUsuario.getText().isEmpty() ||
                 vAd.txbAdminEdad.getText().isEmpty()){
             
-            vAd.jopAdminMensaje.showMessageDialog(vAd, "Complete todos los datos para "+guarAct);
+            vAd.jopAdminMensaje.showMessageDialog(vAd, "Complete todos los datos para "+tarea);
             
             return false;
         }            
@@ -143,15 +148,16 @@ public class ControladorAdministrador implements ActionListener, MouseListener, 
         uvo.setContrasena(vAd.txbAdminContrasena.getText().toString());
         uvo.setUsuario(vAd.txbAdminUsuario.getText().toString());
         uvo.setEdad(Integer.valueOf(vAd.txbAdminEdad.getText()));
+        uvo.setFkEstadoId(vAd.jcbAdminEstado.getSelectedIndex()+1);
+        uvo.setFkTipoUsuarioId(vAd.jcbAdminTipoJugador.getSelectedIndex()+1);
         
-        //Validar que el usuario sea unico
-        if(udao.validarU(uvo) && guarAct=="guardar"){
+        //Validar que el usuario sea unico para usuarios nuevos
+        if(udao.validarU(uvo) && tarea.equals("guardar")){
             vAd.jopAdminMensaje.showMessageDialog(vAd, "El usuario ya existe");
             return false;
         }else{
             //Vamos a la base de datos
-            
-            if("guardar".equals(guarAct)){
+            if(tarea.equals("guardar")){
                 //1ro Hay que crear la entrada en la tabla de punteo 
                 pvo.setPunteo(0);
                 pdao.insertarP(pvo);
@@ -162,9 +168,18 @@ public class ControladorAdministrador implements ActionListener, MouseListener, 
                 uvo.setFkEstadoId(1);//Usuario Activo
                 udao.insertarU(uvo);
             }
-            if("actualizar".equals(guarAct)){
+            if(tarea.equals("actualizar")){
+                uvo.setFkEstadoId(vAd.jcbAdminEstado.getSelectedIndex()+1);
+                uvo.setFkTipoUsuarioId(vAd.jcbAdminTipoJugador.getSelectedIndex()+1);
                 udao.actualizarU(uvo);
-            }            
+                tarea = "mostrar";
+            }
+            if(tarea.equals("eliminar")){
+                pvo.setId(uvo.getFkPunteoId());
+                udao.eliminarU(uvo);
+                pdao.eliminarP(pvo);
+                tarea = "mostrar";
+            }
         }       
         return true;
     }
@@ -173,8 +188,11 @@ public class ControladorAdministrador implements ActionListener, MouseListener, 
         inicializarF();
         vAd.tblAdminMostrar.setVisible(true);
         vAd.jpnAdminActualizar.setVisible(true);
+        vAd.jpnAdminAvanzado.setVisible(true);
+        vAd.jcbAdminEstado.setVisible(true);
+        vAd.jlbAdminModificar.setVisible(true);
         
-        if(guarAct.equals("actualizar")){
+        if(tarea.equals("actualizar")){
             //Habilitar los txb para ingresar los datos
             vAd.txbAdminNombre.setEditable(true);
             vAd.txbAdminApellido.setEditable(true);
@@ -184,14 +202,22 @@ public class ControladorAdministrador implements ActionListener, MouseListener, 
 
             vAd.btnAdminGuardar.setText("Actualizar");        
             vAd.btnAdminGuardar.setVisible(true);
-            vAd.jcbAdminEstado.setVisible(true);
-            vAd.jlbAdminModificar.setVisible(true);
+            vAd.jcbAdminEstado.setEnabled(true);
+            vAd.jcbAdminTipoJugador.setEnabled(true);
                                    
             vAd.btnAdminReporte.setVisible(false);
             
-            vAd.jpnAdminAvanzado.setVisible(true);
-            
-        }else{
+            vAd.jlbAdminModificar.setText("Haga Doble Click sobre el usuario que desea modificar");
+        }
+        
+        if(tarea.equals("eliminar")){
+            vAd.jlbAdminModificar.setText("Haga Doble Click sobre el usuario que desea Eliminar");
+            vAd.btnAdminGuardar.setText("Eliminar");        
+            vAd.btnAdminGuardar.setVisible(true);
+        }
+        
+        if(tarea.equals("mostrar")){
+            vAd.jlbAdminModificar.setText("Usuarios de la base de datos");
             vAd.btnAdminReporte.setVisible(true);
         }
         
@@ -238,9 +264,18 @@ public class ControladorAdministrador implements ActionListener, MouseListener, 
     
     private void seleccionarId(){
         ArrayList<UsuarioVO> info = new ArrayList<>();
+        ArrayList<EstadoVO> info2 = new ArrayList<>();
+        ArrayList<TipoUsuarioVO> info3 = new ArrayList<>();
         int r = vAd.tblAdminMostrar.getSelectedRow();
         int idTable = (int) vAd.tblAdminMostrar.getValueAt(r, 0);
         uvo.setId(idTable);
+        
+        //Para llenar los items del jcbox estado y tipo de jugador
+        jcbAvanzado();
+        if(tarea.equals("actualizar")){
+            vAd.jcbAdminEstado.setEnabled(true);
+            vAd.jcbAdminTipoJugador.setEnabled(true);
+        }
               
         //Consultar la informacion del usuario
         info = udao.consultarUexacto(uvo);
@@ -251,6 +286,8 @@ public class ControladorAdministrador implements ActionListener, MouseListener, 
         vAd.txbAdminEdad.setText(String.valueOf(info.get(0).getEdad()));
         vAd.txbAdminUsuario.setText(info.get(0).getUsuario());
         vAd.txbAdminContrasena.setText(info.get(0).getContrasena());
+        //
+        vAd.jcbAdminEstado.getSelectedItem();
         
         //Informacion de tablas foraneas
         uvo.setFkEstadoId(info.get(0).getFkEstadoId());
@@ -258,7 +295,13 @@ public class ControladorAdministrador implements ActionListener, MouseListener, 
         uvo.setFkPunteoId(info.get(0).getFkPunteoId());
         
         //Llenar los jcbEstado, jcbTipo
+        evo.setId(uvo.getFkEstadoId());
+        info2 = edao.consultarEexacto(evo);
+        vAd.jcbAdminEstado.setSelectedItem(evo.getNombre());
         
+        tvo.setId(uvo.getFkTipoUsuarioId());
+        info3 = tdao.consultarTuexacto(tvo);
+        vAd.jcbAdminTipoJugador.setSelectedItem(tvo.getNombre());
         
     }
     
@@ -269,13 +312,16 @@ public class ControladorAdministrador implements ActionListener, MouseListener, 
         return true;
     }
     
-    private void eliminarU(){
-        inicializarF();
-        System.out.println("Eliminando usuarios");
+    private boolean eliminarU(){
         humanEr=0;
+        guardarDatos();
+        mostrarU();
+        return true;
     }
        
     private void jcbAvanzado(){
+        vAd.jcbAdminEstado.setEnabled(true);
+        vAd.jcbAdminTipoJugador.setEnabled(true);
         vAd.jcbAdminEstado.removeAllItems();
         vAd.jcbAdminTipoJugador.removeAllItems();
         
@@ -286,12 +332,14 @@ public class ControladorAdministrador implements ActionListener, MouseListener, 
         for(TipoUsuarioVO tvo : tdao.consultarTu()){
             vAd.jcbAdminTipoJugador.addItem(tvo.getNombre());
         }
+        vAd.jcbAdminEstado.setEnabled(false);
+        vAd.jcbAdminTipoJugador.setEnabled(false);
     }
     
     @Override
     public void actionPerformed(ActionEvent e) {
        if(e.getSource()==vAd.btnAdminGuardar){
-           if(guarAct == "guardar"){
+           if(tarea.equals("guardar")){
                 if(guardarDatos()){
                     vAd.jopAdminMensaje.showMessageDialog(vAd, "El usuario a sido creado exitosamente");
                     inicializarF();
@@ -299,11 +347,18 @@ public class ControladorAdministrador implements ActionListener, MouseListener, 
                     vAd.jopAdminMensaje.showMessageDialog(vAd, "El usuario no pudo ser creado");
                 }
            }
-           if(guarAct == "actualizar"){
+           if(tarea.equals("actualizar")){
                if(modificarU()){
                    vAd.jopAdminMensaje.showMessageDialog(vAd, "Usuario Actualizado con exito");
                }else{
                    vAd.jopAdminMensaje.showMessageDialog(vAd, "El usuario no pudo ser Actualizado");
+               }
+           }
+           if(tarea.equals("eliminar")){
+               if(eliminarU()){
+                   vAd.jopAdminMensaje.showMessageDialog(vAd, "Usuario eliminado con exito");
+               }else{
+                   vAd.jopAdminMensaje.showMessageDialog(vAd, "El usuario no pudo ser eliminado");
                }
            }
            
@@ -314,7 +369,7 @@ public class ControladorAdministrador implements ActionListener, MouseListener, 
     public void mouseClicked(MouseEvent e) {
         if(e.getClickCount()==2){
             seleccionarId();
-            guarAct="actualizar";
+            //tarea="actualizar";
         }
  
     }
@@ -380,38 +435,31 @@ public class ControladorAdministrador implements ActionListener, MouseListener, 
         //Para capturar el item cambiado
             if(e.getSource()==vAd.jcbAdminLista){
             switch (vAd.jcbAdminLista.getSelectedIndex()) {
-                case 1://Ingresar usuario
+                case 1://Create User
                     humanEr++;
-                    guarAct = "guardar";
                     if (humanEr==2 && jcbselect) {
-                        //jcbselect = false;
-                        //vAd.jcbAdminLista.setSelectedIndex(1);
+                        tarea = "guardar";
                         ingresarU();
                     }
                     break;
-                case 2://Borrar usuario
+                case 2://Read Usuario
                     humanEr++;
                     if (humanEr==2 && jcbselect) {
-                        //jcbselect = false;
-                        //vAd.jcbAdminLista.setSelectedIndex(2);
-                        eliminarU();
-                    }
-                    break;
-                case 3://Modificar usuario
-                    humanEr++;
-                    guarAct = "actualizar";
-                    if (humanEr==2 && jcbselect){
-                        //jcbselect = false;
-                        //vAd.jcbAdminLista.setSelectedIndex(3);
+                        tarea = "mostrar";
                         mostrarU();
                     }
                     break;
-                case 4://Mostrar usuarios
+                case 3://Update User
                     humanEr++;
-                    guarAct = "mostrar";
+                    if (humanEr==2 && jcbselect){
+                        tarea = "actualizar";
+                        mostrarU();
+                    }
+                    break;
+                case 4://Delete User
+                    humanEr++;
                     if (humanEr==2 && jcbselect) {
-                        //jcbselect = false;
-                        //vAd.jcbAdminLista.setSelectedIndex(4);
+                        tarea = "eliminar";
                         mostrarU();
                     }
                     break;
