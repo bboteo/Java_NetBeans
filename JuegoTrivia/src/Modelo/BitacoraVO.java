@@ -5,8 +5,8 @@ import java.util.Date;
 
 public class BitacoraVO {
     private int id;
-    private Date dateInicio;
-    private Date dateFinal;
+    private String dateInicio;
+    private String dateFinal;
     private int numeroIntento;
     private int punteo;
     private int fkUsuarioId;
@@ -19,11 +19,11 @@ public class BitacoraVO {
         this.id = id;
     }
 
-    public void setDateInicio(Date dateInicio) {
+    public void setDateInicio(String dateInicio) {
         this.dateInicio = dateInicio;
     }
 
-    public void setDateFinal(Date dateFinal) {
+    public void setDateFinal(String dateFinal) {
         this.dateFinal = dateFinal;
     }
 
@@ -47,11 +47,11 @@ public class BitacoraVO {
         return id;
     }
 
-    public Date getDateInicio() {
+    public String getDateInicio() {
         return dateInicio;
     }
 
-    public Date getDateFinal() {
+    public String getDateFinal() {
         return dateFinal;
     }
 

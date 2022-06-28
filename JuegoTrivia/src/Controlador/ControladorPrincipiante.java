@@ -17,7 +17,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
-import java.util.Random;
+import java.util.ArrayList;
 
 public class ControladorPrincipiante implements ActionListener, WindowListener{
     FrmJugadorPrincipiante vJp = new FrmJugadorPrincipiante();
@@ -39,8 +39,12 @@ public class ControladorPrincipiante implements ActionListener, WindowListener{
     int rU1,rU2,rU3,rU4,rU5,rU6;
     
     //Agreagar preguntas:
-        int q11,q12,q21,q22,q31,q32,q41,q42,q51,q52,q61,q62;
+    int q11,q12,q21,q22,q31,q32,q41,q42,q51,q52,q61,q62;
     
+    int nota = 0;
+    int numIntento = 0;
+    boolean calificado = false;
+      
     public ControladorPrincipiante(FrmJugadorPrincipiante vJp, FrmJugadorIntermedio vJi,
             UsuarioVO uvo, UsuarioDAO udao, PunteoVO pvo, PunteoDAO pdao,
             EstadoVO evo, EstadoDAO edao, TipoUsuarioVO tvo, TipoUsuarioDAO tdao,
@@ -67,12 +71,21 @@ public class ControladorPrincipiante implements ActionListener, WindowListener{
         this.vJp.btnPrincipianteQ6End.addActionListener(this);
         this.vJp.btnPrincipianteRepetir.addActionListener(this);
         this.vJp.addWindowListener(this);
+        
+        bvo.setDateInicio(ext.fechaHoy());
       
     }
     
     private void inicializarF(){
+        ArrayList<BitacoraVO> info = new ArrayList<>();
+        
         vJp.lblPrincipianteUsuario.setText("Usuario: "+uvo.getUsuario());
+        //Hay que agregar la fecha y el ultimo punteo
+        vJp.txbPrincipianteDate.setText("");
+        vJp.txbPrincipiantePuntos.setText("");
+        
         vJp.bproJugadorPrincipiante.setValue(0);
+        vJp.btnPrincipianteQ6End.setEnabled(true);
         
         //Respuestas
         rU1=0;
@@ -101,7 +114,7 @@ public class ControladorPrincipiante implements ActionListener, WindowListener{
         q51 = ext.aleatorio();
         q52 = ext.aleatorio();
         q61 = ext.aleatorio();
-        q62 = ext.aleatorio(); 
+        q62 = 1; //ext.aleatorio(); 
         
         //Desabilitar los paneles
         vJp.jTabbedPane1.setEnabledAt(0, false);
@@ -139,11 +152,15 @@ public class ControladorPrincipiante implements ActionListener, WindowListener{
         vJp.txbPrincipianteQ3Res.setText("");
         vJp.txbPrincipianteQ4Res.setText("");
         vJp.txbPrincipianteQ5Res.setText("");
-        vJp.txbPrincipianteQ6Res.setText("");        
+        vJp.txbPrincipianteQ6Res.setText("");
+        
+        nota = 0;
+        calificado = false;
+        numIntento++;
+        
     }
     
-    private int calificacion(){
-        int nota = 0;
+    private void calificacion(){
         if(rU1 == rM1) nota = nota + 1;
         if(rU2 == rM2) nota = nota + 1;
         if(rU3 == rM3) nota = nota + 1;
@@ -152,12 +169,19 @@ public class ControladorPrincipiante implements ActionListener, WindowListener{
         if(rU6 == rM6) nota = nota + 1;
         
         if(nota == 6){
-            vJp.jopPrincipianteMensaje.showMessageDialog(vJp, "     Su nota es: "+nota+" \n"+
+            vJp.jopPrincipianteMensaje.showMessageDialog(vJp, "Su nota es: "+nota+" \n"+
                                                               "Felicidades completo el nivel");
             
-        }else{
-            vJp.jopPrincipianteMensaje.showMessageDialog(vJp,"     Su nota es: "+nota+" \n"+
-                                                             "   Intentelo nuevamente\n"+ 
+            
+            guardarFinal();
+            this.vJi.setVisible(true);
+            this.vJi.setLocationRelativeTo(vJp);
+            this.vJi.setResizable(false);
+            this.vJp.setVisible(false);
+            
+            }else{
+            vJp.jopPrincipianteMensaje.showMessageDialog(vJp,"Su nota es: "+nota+" \n"+
+                                                             "Intentelo nuevamente\n"+ 
                                                              "Las respuestas corestas son: \n"+
                                                               q11+" + "+q12+" = "+rM1+"\n"+
                                                               q21+" + "+q22+" = "+rM2+"\n"+
@@ -165,17 +189,35 @@ public class ControladorPrincipiante implements ActionListener, WindowListener{
                                                               q41+" + "+q42+" = "+rM4+"\n"+
                                                               q51+" + "+q52+" = "+rM5+"\n"+
                                                               q61+" + "+q62+" = "+rM6+"\n");
+            guardarIntento();
+            vJp.btnPrincipianteQ6End.setEnabled(false);
         }
-                       
-        return nota;
+        calificado = true;
     }
     
-    private boolean guardarDB(){
-        int nota = calificacion();
-        //Ingresar los accesos a la base de datos
+    private boolean guardarIntento(){
+        //Guardar en Bitacora
+        //bvo.setDateInicio(ext.fechaHoy());
+        bvo.setDateFinal(ext.fechaHoy());
+        bvo.setNumeroIntento(numIntento);
+        bvo.setPunteo(nota);
+        bvo.setFkUsuarioId(uvo.getId());
+        bvo.setFkTipoUsuarioId(uvo.getFkTipoUsuarioId());
         
-        
-        return false;
+        bdao.insertarB(bvo);
+        return true;
+    }
+    
+    private boolean guardarFinal(){
+        guardarIntento();
+        //modificar nota en tblPunteo
+        pvo.setId(uvo.getFkPunteoId());
+        pvo.setPunteo(6);
+        pdao.actualizarP(pvo);
+        //modificar tipo de usuario tblTipoUsuario
+        uvo.setFkTipoUsuarioId(3);
+        udao.actualizarUtipoUsuario(uvo);
+        return true;
     }
     
     @Override
@@ -229,17 +271,13 @@ public class ControladorPrincipiante implements ActionListener, WindowListener{
             try {
                 rU6 = Integer.parseInt(vJp.txbPrincipianteQ6Res.getText());
                 vJp.bproJugadorPrincipiante.setValue(100);
-                guardarDB(); //Para hacer la calificacion
+                calificacion(); //Para hacer la calificacion
             } catch (Exception er) {
                 vJp.jopPrincipianteMensaje.showMessageDialog(vJp, "El valor debe ser un entero");
             }
         }
         if(e.getSource()==vJp.btnPrincipianteRepetir){
-            for(int i=0; i<=100; i++){
-                vJp.bproJugadorPrincipiante.setValue(i);
-                //wait(i, i);
-            }
-            calificacion();
+            if(!calificado) calificacion();
             inicializarF();
         }
     }
@@ -256,7 +294,7 @@ public class ControladorPrincipiante implements ActionListener, WindowListener{
 
     @Override
     public void windowClosed(WindowEvent e) {
-        
+        guardarIntento();
     }
 
     @Override

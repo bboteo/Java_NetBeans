@@ -13,6 +13,7 @@ public interface TablaUsuario {
     public boolean validarU(UsuarioVO u);
     public boolean validarUc(UsuarioVO u);
     public ArrayList<UsuarioVO> consultarUexacto(UsuarioVO u);
+    public boolean actualizarUtipoUsuario (UsuarioVO u);
     
     //Consultas JOIN
     public ArrayList<UsuarioCVO> consultarUjoin(UsuarioVO u, EstadoVO e, TipoUsuarioVO tu, PunteoVO p);

@@ -247,4 +247,22 @@ public class UsuarioDAO implements TablaUsuario{
     
     } 
 
+    @Override
+    public boolean actualizarUtipoUsuario(UsuarioVO u) {
+        Conector c = new Conector();
+        try {
+            c.conectar();
+            String query = "UPDATE dbjuego.tbl_usuario AS u " +
+                            "SET " +
+                            "u.fk_tipo_usuario_id = "+u.getFkTipoUsuarioId()+"," +
+                            "WHERE u.id = "+u.getId();
+            c.consultasMultiples(query);
+        } catch (Exception e) {
+            System.err.println("Error [ActualizarUpuntos]: "+e);
+            c.desconectar();
+            return false;
+        }
+        return true;
+    }
+
 }

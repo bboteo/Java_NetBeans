@@ -148,7 +148,14 @@ SELECT u.id, u.nombre, u.apellido, u.edad, u.usuario, u.contrasena, tu.nombre, e
 FROM dbjuego.tbl_usuario AS u INNER JOIN dbjuego.tbl_tipo_usuario AS tu
 	ON tu.id = u.fk_tipo_usuario_id INNER JOIN dbjuego.tbl_estado AS e 
 	ON e.id = u.fk_estado_id INNER JOIN dbjuego.tbl_punteo AS p
-	ON p.id = u.fk_punteo_id
+	ON p.id = u.fk_punteo_id;
+
+
+UPDATE dbjuego.tbl_usuario AS u
+SET u.fk_estado_id = 3
+WHERE u.id = 3;
+
+
 
 #Paquete: Modelo / Class:EstadoDAO / Metodo: ConsultarE
 SELECT e.id, e.nombre, e.descripcion
@@ -159,6 +166,39 @@ WHERE e.id = 1;
 SELECT tu.id, tu.nombre, tu.descripcion
 FROM dbjuego.tbl_tipo_usuario AS tu
 
+#Paquete: Modelo / Class:TipoUsuarioDAO / Metodo:ConsultarEtu
+SELECT tu.id, tu.nombre, tu.descripcion 
+FROM dbjuego.tbl_tipo_usuario AS tu
+WHERE tu.id = 1;
+
+#Paquete:Modelo
+SELECT *
+FROM dbjuego.tbl_punteo;
+
+DELETE FROM dbjuego.tbl_punteo
+WHERE id = 4;
+
+SELECT *
+FROM dbjuego.tbl_usuario;
+
+DELETE FROM dbjuego.tbl_usuario
+WHERE id = 4;
+
+#Insertar en Bitacora
+INSERT INTO dbjuego.tbl_bitacora (date_inicio, date_final, numero_intento, punteo, fk_usuario_id, fk_tipo_usuario_id)
+VALUES ('2022-06-06','2022-06-06',1,6,1,1);  
+
+SELECT b.id, b.date_inicio, b.date_final, b.numero_intento, b.punteo, b.fk_usuario_id, b.fk_tipo_usuario_id
+FROM dbjuego.tbl_bitacora AS b;
+
+
+#otras modificaciones
+UPDATE dbjuego.tbl_punteo AS p
+SET p.punteo = 10
+WHERE p.id = 1;
+
+SELECT *
+FROM dbjuego.tbl_tipo_usuario;
 
 #Eliminar la base datos
 DROP DATABASE dbjuego;

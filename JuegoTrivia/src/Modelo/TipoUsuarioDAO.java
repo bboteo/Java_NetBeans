@@ -47,7 +47,17 @@ public class TipoUsuarioDAO implements TablaTipoUsuario{
 
     @Override
     public boolean actualizarTu(TipoUsuarioVO tu) {
-        return false;
+        Conector c = new Conector();
+        try {
+            c.conectar();
+            String query = "";
+            c.consultasMultiples(query);
+        } catch (Exception e) {
+            System.err.println("Error [actualizarTu]: "+e);
+            c.desconectar();
+            return false;
+        }
+        return true;
     }
 
     @Override

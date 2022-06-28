@@ -48,7 +48,20 @@ public class PunteoDAO implements TablaPunteo{
 
     @Override
     public boolean actualizarP(PunteoVO p) {
-        return false;
+        Conector c = new Conector();
+        try {
+            c.conectar();
+            String query = "UPDATE dbjuego.tbl_punteo AS p "
+                    + "SET p.punteo = "+p.getPunteo()+" "
+                    + "WHERE p.id = "+p.getId();
+            
+            c.consultasMultiples(query);
+        } catch (Exception e) {
+            System.err.println("Error [actualizarP]: "+e);
+            c.desconectar();
+            return false;
+        }
+        return true;
     }
 
     @Override
