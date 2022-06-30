@@ -13,6 +13,7 @@ import Modelo.UsuarioDAO;
 import Modelo.UsuarioVO;
 import Vista.FrmJugadorIntermedio;
 import Vista.FrmJugadorPrincipiante;
+import Vista.FrmLogin;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowEvent;
@@ -20,6 +21,7 @@ import java.awt.event.WindowListener;
 import java.util.ArrayList;
 
 public class ControladorPrincipiante implements ActionListener, WindowListener{
+    FrmLogin vLo = new FrmLogin();
     FrmJugadorPrincipiante vJp = new FrmJugadorPrincipiante();
     FrmJugadorIntermedio vJi = new FrmJugadorIntermedio();
     UsuarioVO uvo = new UsuarioVO();
@@ -45,11 +47,12 @@ public class ControladorPrincipiante implements ActionListener, WindowListener{
     int numIntento = 0;
     boolean calificado = false;
       
-    public ControladorPrincipiante(FrmJugadorPrincipiante vJp, FrmJugadorIntermedio vJi,
+    public ControladorPrincipiante(FrmLogin vLo ,FrmJugadorPrincipiante vJp, FrmJugadorIntermedio vJi,
             UsuarioVO uvo, UsuarioDAO udao, PunteoVO pvo, PunteoDAO pdao,
             EstadoVO evo, EstadoDAO edao, TipoUsuarioVO tvo, TipoUsuarioDAO tdao,
             BitacoraVO bvo, BitacoraDAO bdao) {
         
+        this.vLo = vLo;
         this.vJp = vJp;
         this.vJi = vJi;
         this.uvo = uvo;
@@ -70,6 +73,7 @@ public class ControladorPrincipiante implements ActionListener, WindowListener{
         this.vJp.btnPrincipianteQ5Next.addActionListener(this);
         this.vJp.btnPrincipianteQ6End.addActionListener(this);
         this.vJp.btnPrincipianteRepetir.addActionListener(this);
+        this.vJp.btnPrincipianteSalir.addActionListener(this);
         this.vJp.addWindowListener(this);
         
         bvo.setDateInicio(ext.fechaHoy());
@@ -163,9 +167,16 @@ public class ControladorPrincipiante implements ActionListener, WindowListener{
         //Hay que encontrar el ultimo ID en bitacora
         bvo.setId(bdao.consutarBmaxId(uvo));
         info = bdao.consultarBintento(bvo);
-        vJp.txbPrincipianteDate.setText(String.valueOf(info.get(0).getDateInicio()));
-        vJp.txbPrincipiantePuntos.setText(String.valueOf(info.get(0).getPunteo()));
-        vJp.txbPrincipianteIntentos.setText(String.valueOf(info.get(0).getNumeroIntento()));
+        if(info.size()==0){
+            vJp.txbPrincipianteDate.setText(String.valueOf("-"));
+            vJp.txbPrincipiantePuntos.setText(String.valueOf(0));
+            vJp.txbPrincipianteIntentos.setText(String.valueOf(numIntento));
+        }else{
+            vJp.txbPrincipianteDate.setText(String.valueOf(info.get(0).getDateInicio()));
+            vJp.txbPrincipiantePuntos.setText(String.valueOf(info.get(0).getPunteo()));
+            vJp.txbPrincipianteIntentos.setText(String.valueOf(info.get(0).getNumeroIntento()));    
+        }
+        
     }
     
     private void calificacion(){
@@ -237,6 +248,7 @@ public class ControladorPrincipiante implements ActionListener, WindowListener{
                 vJp.jTabbedPane1.setSelectedIndex(1);
             } catch (Exception er) {
                 vJp.jopPrincipianteMensaje.showMessageDialog(vJp, "El valor debe ser un entero");
+                vJp.txbPrincipianteQ1Res.setText("");
             }
         }    
         if(e.getSource()==vJp.btnPrincipianteQ2Next){
@@ -246,6 +258,7 @@ public class ControladorPrincipiante implements ActionListener, WindowListener{
                 vJp.jTabbedPane1.setSelectedIndex(2);
             } catch (Exception er) {
                 vJp.jopPrincipianteMensaje.showMessageDialog(vJp, "El valor debe ser un entero");
+                vJp.txbPrincipianteQ2Res.setText("");
             }
         } 
         if(e.getSource()==vJp.btnPrincipianteQ3Next){
@@ -255,6 +268,7 @@ public class ControladorPrincipiante implements ActionListener, WindowListener{
                 vJp.jTabbedPane1.setSelectedIndex(3);
             } catch (Exception er) {
                 vJp.jopPrincipianteMensaje.showMessageDialog(vJp, "El valor debe ser un entero");
+                vJp.txbPrincipianteQ3Res.setText("");
             }
         }
         if(e.getSource()==vJp.btnPrincipianteQ4Next){
@@ -264,6 +278,7 @@ public class ControladorPrincipiante implements ActionListener, WindowListener{
                 vJp.jTabbedPane1.setSelectedIndex(4);
             } catch (Exception er) {
                 vJp.jopPrincipianteMensaje.showMessageDialog(vJp, "El valor debe ser un entero");
+                vJp.txbPrincipianteQ4Res.setText("");
             }
         } 
         if(e.getSource()==vJp.btnPrincipianteQ5Next){
@@ -273,6 +288,7 @@ public class ControladorPrincipiante implements ActionListener, WindowListener{
                 vJp.jTabbedPane1.setSelectedIndex(5);
             } catch (Exception er) {
                 vJp.jopPrincipianteMensaje.showMessageDialog(vJp, "El valor debe ser un entero");
+                vJp.txbPrincipianteQ5Res.setText("");
             }
         } 
         if(e.getSource()==vJp.btnPrincipianteQ6End){
@@ -282,11 +298,21 @@ public class ControladorPrincipiante implements ActionListener, WindowListener{
                 calificacion(); //Para hacer la calificacion
             } catch (Exception er) {
                 vJp.jopPrincipianteMensaje.showMessageDialog(vJp, "El valor debe ser un entero");
+                vJp.txbPrincipianteQ6Res.setText("");
             }
         }
         if(e.getSource()==vJp.btnPrincipianteRepetir){
             if(!calificado) calificacion();
             inicializarF();
+        }
+        if(e.getSource()==vJp.btnPrincipianteSalir){
+            if(!calificado) calificacion();
+            inicializarF();
+            vJp.dispose();
+            vLo.setVisible(true);
+            vLo.txbLoginUsuario.setEditable(true);
+            vLo.txbLoginContrasena.setEditable(true);
+            vLo.btnAdminLogin.setEnabled(true);
         }
     }
 
@@ -302,7 +328,7 @@ public class ControladorPrincipiante implements ActionListener, WindowListener{
 
     @Override
     public void windowClosed(WindowEvent e) {
-        guardarIntento();
+        if(!calificado) guardarIntento();
     }
 
     @Override

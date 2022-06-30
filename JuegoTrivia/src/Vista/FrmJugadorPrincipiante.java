@@ -4,6 +4,9 @@
  */
 package Vista;
 
+import java.awt.Image;
+import java.awt.Toolkit;
+
 /**
  *
  * @author bboteo
@@ -15,8 +18,17 @@ public class FrmJugadorPrincipiante extends javax.swing.JFrame {
      */
     public FrmJugadorPrincipiante() {
         initComponents();
+        setIconImage(getIconImage());
     }
 
+    //Icono del Jframe
+    @Override
+    public Image getIconImage(){
+        
+        Image retValue = Toolkit.getDefaultToolkit().getImage(ClassLoader.getSystemResource("Img/quiz.png"));
+        
+        return retValue;
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -91,6 +103,7 @@ public class FrmJugadorPrincipiante extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         txbPrincipianteIntentos = new javax.swing.JTextField();
         bproJugadorPrincipiante = new javax.swing.JProgressBar();
+        btnPrincipianteSalir = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Jugador - Principiante");
@@ -120,7 +133,7 @@ public class FrmJugadorPrincipiante extends javax.swing.JFrame {
         jpnPrincipianteQ1Layout.setHorizontalGroup(
             jpnPrincipianteQ1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jpnPrincipianteQ1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(26, Short.MAX_VALUE)
                 .addGroup(jpnPrincipianteQ1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpnPrincipianteQ1Layout.createSequentialGroup()
                         .addComponent(lblPrincipianteQ1Res)
@@ -134,7 +147,7 @@ public class FrmJugadorPrincipiante extends javax.swing.JFrame {
                             .addComponent(lblPrincipianteQ1Peso2))
                         .addGap(26, 26, 26)
                         .addComponent(scrPrincipianteQ1, javax.swing.GroupLayout.PREFERRED_SIZE, 532, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(24, 24, 24))
+                .addContainerGap())
         );
         jpnPrincipianteQ1Layout.setVerticalGroup(
             jpnPrincipianteQ1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -554,14 +567,14 @@ public class FrmJugadorPrincipiante extends javax.swing.JFrame {
                             .addComponent(lblPrincipianteUsuario)
                             .addComponent(lblPrincipianteIntento))
                         .addGap(18, 18, 18)
-                        .addGroup(jpnPrincipianteCabeceraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblPrincipianteNivel)
-                            .addComponent(txbPrincipianteDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(jpnPrincipianteCabeceraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(lblPrincipianteNivel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(txbPrincipianteDate)))
                     .addGroup(jpnPrincipianteCabeceraLayout.createSequentialGroup()
                         .addComponent(btnPrincipianteRepetir)
                         .addGap(18, 18, 18)
                         .addComponent(jLabel1)))
-                .addGap(18, 18, 18)
+                .addGap(55, 55, 55)
                 .addGroup(jpnPrincipianteCabeceraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpnPrincipianteCabeceraLayout.createSequentialGroup()
                         .addComponent(txbPrincipianteLv1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -609,26 +622,39 @@ public class FrmJugadorPrincipiante extends javax.swing.JFrame {
         bproJugadorPrincipiante.setBackground(new java.awt.Color(255, 255, 255));
         bproJugadorPrincipiante.setForeground(new java.awt.Color(255, 255, 0));
 
+        btnPrincipianteSalir.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        btnPrincipianteSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/salida.png"))); // NOI18N
+        btnPrincipianteSalir.setText("Salir");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(jpnPrincipianteCabecera, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jTabbedPane1, javax.swing.GroupLayout.Alignment.LEADING))
-                    .addComponent(bproJugadorPrincipiante, javax.swing.GroupLayout.PREFERRED_SIZE, 618, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jTabbedPane1)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(bproJugadorPrincipiante, javax.swing.GroupLayout.PREFERRED_SIZE, 472, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnPrincipianteSalir)
+                        .addGap(8, 8, 8))
+                    .addComponent(jpnPrincipianteCabecera, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jpnPrincipianteCabecera, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(17, 17, 17)
-                .addComponent(bproJugadorPrincipiante, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(17, 17, 17)
+                        .addComponent(bproJugadorPrincipiante, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnPrincipianteSalir)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -691,6 +717,7 @@ public class FrmJugadorPrincipiante extends javax.swing.JFrame {
     public javax.swing.JButton btnPrincipianteQ5Next;
     public javax.swing.JButton btnPrincipianteQ6End;
     public javax.swing.JButton btnPrincipianteRepetir;
+    public javax.swing.JButton btnPrincipianteSalir;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     public javax.swing.JTabbedPane jTabbedPane1;

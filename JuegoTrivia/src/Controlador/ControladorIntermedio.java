@@ -14,6 +14,7 @@ import Modelo.UsuarioDAO;
 import Modelo.UsuarioVO;
 import Vista.FrmJugadorAvanzado;
 import Vista.FrmJugadorIntermedio;
+import Vista.FrmLogin;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowEvent;
@@ -21,6 +22,7 @@ import java.awt.event.WindowListener;
 import java.util.ArrayList;
 
 public class ControladorIntermedio implements ActionListener, WindowListener{
+    FrmLogin vLo = new FrmLogin();
     FrmJugadorIntermedio vJi = new FrmJugadorIntermedio();
     FrmJugadorAvanzado vJa = new FrmJugadorAvanzado();
     UsuarioVO uvo = new UsuarioVO();
@@ -46,11 +48,12 @@ public class ControladorIntermedio implements ActionListener, WindowListener{
     int numIntento = 0;
     boolean calificado = false;
 
-    public ControladorIntermedio(FrmJugadorIntermedio vJi, FrmJugadorAvanzado vJa, 
+    public ControladorIntermedio(FrmLogin vLo ,FrmJugadorIntermedio vJi, FrmJugadorAvanzado vJa, 
             UsuarioVO uvo, UsuarioDAO udao, PunteoVO pvo, PunteoDAO pdao, 
             EstadoVO evo, EstadoDAO edao, TipoUsuarioVO tvo, TipoUsuarioDAO tdao,
             BitacoraVO bvo, BitacoraDAO bdao) {
         
+        this.vLo = vLo;
         this.vJi = vJi;
         this.vJa = vJa;
         this.uvo = uvo;
@@ -70,6 +73,7 @@ public class ControladorIntermedio implements ActionListener, WindowListener{
         this.vJi.btnIntermedioQ4Next.addActionListener(this);
         this.vJi.btnIntermedioQ5Next.addActionListener(this);
         this.vJi.btnIntermedioRepetir.addActionListener(this);
+        this.vJi.btnIntermedioSalir.addActionListener(this);
         this.vJi.addWindowListener(this);
         
         bvo.setDateInicio(ext.fechaHoy());
@@ -81,8 +85,16 @@ public class ControladorIntermedio implements ActionListener, WindowListener{
         //Hay que encontrar el ultimo ID en bitacora
         bvo.setId(bdao.consutarBmaxId(uvo));
         info = bdao.consultarBintento(bvo);
-        vJi.txbIntermedioDate.setText(String.valueOf(info.get(0).getDateInicio()));
-        vJi.txbIntermedioPuntos.setText(String.valueOf(info.get(0).getNumeroIntento()));
+        if(info.size()==0){
+            vJi.txbIntermedioDate.setText(String.valueOf("-"));
+            vJi.txbIntermedioPuntos.setText(String.valueOf(0));
+            vJi.txbIntermedioIntentos.setText(String.valueOf(numIntento));
+        }else{
+            vJi.txbIntermedioDate.setText(String.valueOf(info.get(0).getDateInicio()));
+            vJi.txbIntermedioPuntos.setText(String.valueOf(info.get(0).getPunteo()));
+            vJi.txbIntermedioIntentos.setText(String.valueOf(info.get(0).getNumeroIntento()));
+        }
+        
     }
     
     private void inicializarF(){
@@ -95,30 +107,35 @@ public class ControladorIntermedio implements ActionListener, WindowListener{
            
         //Respuestas
         rM1 = "Flores";
+        rU1 = "";
         vJi.jcbIntermedioQ1Res.removeAllItems();
         vJi.jcbIntermedioQ1Res.addItem("Santa Ana");
         vJi.jcbIntermedioQ1Res.addItem("Melchor de Mencos");
         vJi.jcbIntermedioQ1Res.addItem("Flores");
         
         rM2 = "Orquidea";
+        rU2 = "";
         vJi.jcbIntermedioQ2Res.removeAllItems();
         vJi.jcbIntermedioQ2Res.addItem("Crisantemo");
         vJi.jcbIntermedioQ2Res.addItem("Anemona");
         vJi.jcbIntermedioQ2Res.addItem("Orquidea");
         
         rM3 = "22";
+        rU3 = "";
         vJi.jcbIntermedioQ3Res.removeAllItems();
         vJi.jcbIntermedioQ3Res.addItem("23");
         vJi.jcbIntermedioQ3Res.addItem("21");
         vJi.jcbIntermedioQ3Res.addItem("22");
         
         rM4 = "Una Republica";
+        rU4 = "";
         vJi.jcbIntermedioQ4Res.removeAllItems();
         vJi.jcbIntermedioQ4Res.addItem("Una Federacion");
         vJi.jcbIntermedioQ4Res.addItem("Una Monarquia");
         vJi.jcbIntermedioQ4Res.addItem("Una Republica");
        
         rM5 = "tres";
+        rU5 = "";
         vJi.jcbIntermedioQ5Res.removeAllItems();
         vJi.jcbIntermedioQ5Res.addItem("uno");
         vJi.jcbIntermedioQ5Res.addItem("dos");
@@ -243,6 +260,15 @@ public class ControladorIntermedio implements ActionListener, WindowListener{
             if(!calificado) calificacion();
             inicializarF();
         }
+        if(e.getSource()==vJi.btnIntermedioSalir){
+            if(!calificado) calificacion();
+            inicializarF();
+            vJi.dispose();
+            vLo.setVisible(true);
+            vLo.txbLoginUsuario.setEditable(true);
+            vLo.txbLoginContrasena.setEditable(true);
+            vLo.btnAdminLogin.setEnabled(true);
+        }
     }
 
     @Override
@@ -252,12 +278,12 @@ public class ControladorIntermedio implements ActionListener, WindowListener{
 
     @Override
     public void windowClosing(WindowEvent e) {
-
+        //guardarIntento();
     }
 
     @Override
     public void windowClosed(WindowEvent e) {
-        guardarIntento();
+        if(!calificado) guardarIntento();
     }
 
     @Override

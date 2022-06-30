@@ -4,6 +4,9 @@
  */
 package Vista;
 
+import java.awt.Image;
+import java.awt.Toolkit;
+
 /**
  *
  * @author bboteo
@@ -17,6 +20,14 @@ public class FrmLogin extends javax.swing.JFrame {
         initComponents();
     }
 
+    //Icono del Jframe
+    @Override
+    public Image getIconImage(){
+        
+        Image retValue = Toolkit.getDefaultToolkit().getImage(ClassLoader.getSystemResource("Img/quiz.png"));
+        
+        return retValue;
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -35,16 +46,20 @@ public class FrmLogin extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Login");
+        setIconImage(getIconImage());
 
         lblLoginUsuario.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        lblLoginUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/usuario.png"))); // NOI18N
         lblLoginUsuario.setText("Usuario");
 
         lblLoginContrasena.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        lblLoginContrasena.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/contrasena.png"))); // NOI18N
         lblLoginContrasena.setText("Contrasena");
 
         txbLoginUsuario.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
         btnAdminLogin.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        btnAdminLogin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/entrada.png"))); // NOI18N
         btnAdminLogin.setText("Ingresar");
 
         txbLoginContrasena.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -59,11 +74,11 @@ public class FrmLogin extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(27, 27, 27)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblLoginUsuario)
-                    .addComponent(lblLoginContrasena))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(lblLoginContrasena, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lblLoginUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(txbLoginUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, 226, Short.MAX_VALUE)
                     .addComponent(txbLoginContrasena))
@@ -71,7 +86,7 @@ public class FrmLogin extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(135, 135, 135)
                 .addComponent(btnAdminLogin)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(148, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -86,7 +101,7 @@ public class FrmLogin extends javax.swing.JFrame {
                     .addComponent(txbLoginContrasena, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(btnAdminLogin)
-                .addContainerGap(15, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();

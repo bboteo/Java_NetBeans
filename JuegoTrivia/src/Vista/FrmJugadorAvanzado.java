@@ -4,6 +4,9 @@
  */
 package Vista;
 
+import java.awt.Image;
+import java.awt.Toolkit;
+
 /**
  *
  * @author bboteo
@@ -15,8 +18,16 @@ public class FrmJugadorAvanzado extends javax.swing.JFrame {
      */
     public FrmJugadorAvanzado() {
         initComponents();
+        setIconImage(getIconImage());
     }
-
+    //Icono del Jframe
+    @Override
+    public Image getIconImage(){
+        
+        Image retValue = Toolkit.getDefaultToolkit().getImage(ClassLoader.getSystemResource("Img/quiz.png"));
+        
+        return retValue;
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -70,6 +81,12 @@ public class FrmJugadorAvanzado extends javax.swing.JFrame {
         tbxAvanzadoLv3 = new javax.swing.JTextField();
         lblAvanzadoPuntos = new javax.swing.JLabel();
         txbAvanzadoPuntos = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        txbAvanzadoIntentos = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
+        btnAvanzadoRepetir = new javax.swing.JButton();
+        bproJugadorAvanzado = new javax.swing.JProgressBar();
+        btnAvanzadoSalir = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Jugador - Principiante");
@@ -345,6 +362,7 @@ public class FrmJugadorAvanzado extends javax.swing.JFrame {
         txbAvanzadoLv1.setEditable(false);
         txbAvanzadoLv1.setBackground(new java.awt.Color(255, 255, 0));
         txbAvanzadoLv1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        txbAvanzadoLv1.setText("          ");
         txbAvanzadoLv1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txbAvanzadoLv1ActionPerformed(evt);
@@ -352,7 +370,9 @@ public class FrmJugadorAvanzado extends javax.swing.JFrame {
         });
 
         txbAvanzadoLv2.setEditable(false);
+        txbAvanzadoLv2.setBackground(new java.awt.Color(255, 255, 0));
         txbAvanzadoLv2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        txbAvanzadoLv2.setText("          ");
         txbAvanzadoLv2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txbAvanzadoLv2ActionPerformed(evt);
@@ -360,7 +380,9 @@ public class FrmJugadorAvanzado extends javax.swing.JFrame {
         });
 
         tbxAvanzadoLv3.setEditable(false);
+        tbxAvanzadoLv3.setBackground(new java.awt.Color(255, 255, 0));
         tbxAvanzadoLv3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        tbxAvanzadoLv3.setText("          ");
         tbxAvanzadoLv3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tbxAvanzadoLv3ActionPerformed(evt);
@@ -374,6 +396,18 @@ public class FrmJugadorAvanzado extends javax.swing.JFrame {
         txbAvanzadoPuntos.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         txbAvanzadoPuntos.setForeground(new java.awt.Color(153, 153, 153));
 
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel2.setText("Intentos");
+
+        txbAvanzadoIntentos.setEditable(false);
+        txbAvanzadoIntentos.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        txbAvanzadoIntentos.setForeground(new java.awt.Color(153, 153, 153));
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel1.setText("Reiniciar la Prueba");
+
+        btnAvanzadoRepetir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/sincronizar.png"))); // NOI18N
+
         javax.swing.GroupLayout jpnAvanzadoCabeceraLayout = new javax.swing.GroupLayout(jpnAvanzadoCabecera);
         jpnAvanzadoCabecera.setLayout(jpnAvanzadoCabeceraLayout);
         jpnAvanzadoCabeceraLayout.setHorizontalGroup(
@@ -381,24 +415,35 @@ public class FrmJugadorAvanzado extends javax.swing.JFrame {
             .addGroup(jpnAvanzadoCabeceraLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jpnAvanzadoCabeceraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblAvanzadoUsuario)
-                    .addComponent(lblAvanzadoIntento))
-                .addGap(18, 18, 18)
-                .addGroup(jpnAvanzadoCabeceraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblAvanzadoNivel)
-                    .addComponent(txbAvanzadoDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jpnAvanzadoCabeceraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpnAvanzadoCabeceraLayout.createSequentialGroup()
-                        .addComponent(txbAvanzadoLv1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(txbAvanzadoLv2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(tbxAvanzadoLv3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jpnAvanzadoCabeceraLayout.createSequentialGroup()
-                        .addComponent(lblAvanzadoPuntos)
+                        .addGroup(jpnAvanzadoCabeceraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblAvanzadoUsuario)
+                            .addComponent(lblAvanzadoIntento))
                         .addGap(18, 18, 18)
-                        .addComponent(txbAvanzadoPuntos, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(jpnAvanzadoCabeceraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblAvanzadoNivel)
+                            .addComponent(txbAvanzadoDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jpnAvanzadoCabeceraLayout.createSequentialGroup()
+                        .addComponent(btnAvanzadoRepetir)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel1)))
+                .addGap(55, 55, 55)
+                .addGroup(jpnAvanzadoCabeceraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jpnAvanzadoCabeceraLayout.createSequentialGroup()
+                        .addComponent(jLabel2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(txbAvanzadoIntentos, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jpnAvanzadoCabeceraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpnAvanzadoCabeceraLayout.createSequentialGroup()
+                            .addComponent(txbAvanzadoLv1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(18, 18, 18)
+                            .addComponent(txbAvanzadoLv2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(18, 18, 18)
+                            .addComponent(tbxAvanzadoLv3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jpnAvanzadoCabeceraLayout.createSequentialGroup()
+                            .addComponent(lblAvanzadoPuntos)
+                            .addGap(18, 18, 18)
+                            .addComponent(txbAvanzadoPuntos, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jpnAvanzadoCabeceraLayout.setVerticalGroup(
@@ -417,8 +462,23 @@ public class FrmJugadorAvanzado extends javax.swing.JFrame {
                     .addComponent(txbAvanzadoDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblAvanzadoPuntos)
                     .addComponent(txbAvanzadoPuntos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(16, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(jpnAvanzadoCabeceraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jpnAvanzadoCabeceraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(txbAvanzadoIntentos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnAvanzadoRepetir))
+                    .addGroup(jpnAvanzadoCabeceraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel1)
+                        .addComponent(jLabel2)))
+                .addContainerGap(17, Short.MAX_VALUE))
         );
+
+        bproJugadorAvanzado.setBackground(new java.awt.Color(255, 255, 255));
+        bproJugadorAvanzado.setForeground(new java.awt.Color(255, 255, 0));
+
+        btnAvanzadoSalir.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        btnAvanzadoSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/salida.png"))); // NOI18N
+        btnAvanzadoSalir.setText("Salir");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -427,16 +487,25 @@ public class FrmJugadorAvanzado extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jpnAvanzadoCabecera, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jTabbedPane1))
-                .addContainerGap(12, Short.MAX_VALUE))
+                    .addComponent(jTabbedPane1)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(bproJugadorAvanzado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnAvanzadoSalir)
+                        .addGap(11, 11, 11))
+                    .addComponent(jpnAvanzadoCabecera, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jpnAvanzadoCabecera, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(bproJugadorAvanzado, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnAvanzadoSalir))
+                .addGap(4, 4, 4)
                 .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -492,11 +561,16 @@ public class FrmJugadorAvanzado extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JProgressBar bproJugadorAvanzado;
     public javax.swing.JButton btnAvanzadoQ1Next;
     public javax.swing.JButton btnAvanzadoQ2Next1;
     public javax.swing.JButton btnAvanzadoQ3Next2;
     public javax.swing.JButton btnAvanzadoQ4Next;
-    private javax.swing.JTabbedPane jTabbedPane1;
+    public javax.swing.JButton btnAvanzadoRepetir;
+    public javax.swing.JButton btnAvanzadoSalir;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    public javax.swing.JTabbedPane jTabbedPane1;
     public javax.swing.JOptionPane jopAvanzadoMensaje;
     private javax.swing.JPanel jpnAvanzadoCabecera;
     public javax.swing.JPanel jpnAvanzadoQ1;
@@ -518,7 +592,7 @@ public class FrmJugadorAvanzado extends javax.swing.JFrame {
     private javax.swing.JLabel lblAvanzadoQ4Peso1;
     private javax.swing.JLabel lblAvanzadoQ4Peso2;
     private javax.swing.JLabel lblAvanzadoQ4Res;
-    private javax.swing.JLabel lblAvanzadoUsuario;
+    public javax.swing.JLabel lblAvanzadoUsuario;
     public javax.swing.JScrollPane scrAvanzadoQ1;
     public javax.swing.JScrollPane scrAvanzadoQ2;
     public javax.swing.JScrollPane scrAvanzadoQ3;
@@ -529,6 +603,7 @@ public class FrmJugadorAvanzado extends javax.swing.JFrame {
     public javax.swing.JTextArea txaAvanzadoQ3Pregunta;
     public javax.swing.JTextArea txaAvanzadoQ4Pregunta;
     public javax.swing.JTextField txbAvanzadoDate;
+    public javax.swing.JTextField txbAvanzadoIntentos;
     public javax.swing.JTextField txbAvanzadoLv1;
     public javax.swing.JTextField txbAvanzadoLv2;
     public javax.swing.JTextField txbAvanzadoPuntos;

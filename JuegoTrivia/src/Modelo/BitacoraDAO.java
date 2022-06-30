@@ -82,7 +82,8 @@ public class BitacoraDAO implements TablaBitacora{
             String query = "SELECT MAX(b.id) " +
                            "FROM dbjuego.tbl_bitacora AS b INNER JOIN dbjuego.tbl_usuario AS u " +
                            "    ON u.id = b.fk_usuario_id " +
-                           "WHERE u.id = "+u.getId();
+                           "WHERE u.id = "+u.getId()+ 
+                           " AND b.fk_tipo_usuario_id = "+ u.getFkTipoUsuarioId();
             result = c.consultaDatos(query);
                         
             while(result.next()){

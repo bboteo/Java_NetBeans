@@ -13,6 +13,7 @@ import Modelo.UsuarioCVO;
 import Modelo.UsuarioDAO;
 import Modelo.UsuarioVO;
 import Vista.FrmAdministrador;
+import Vista.FrmLogin;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
@@ -28,6 +29,7 @@ import javax.swing.table.TableColumn;
 public class ControladorAdministrador implements ActionListener, MouseListener, WindowListener,
         ItemListener{
 
+    FrmLogin vLo = new FrmLogin();
     FrmAdministrador vAd = new FrmAdministrador();
     UsuarioDAO udao = new UsuarioDAO();
     UsuarioVO uvo = new UsuarioVO();
@@ -46,10 +48,11 @@ public class ControladorAdministrador implements ActionListener, MouseListener, 
     private boolean jcbselect = true;//Para que el jcbox ponga la seleccion
     private String tarea = "";
 
-    public ControladorAdministrador(FrmAdministrador vAd, UsuarioDAO udao, UsuarioVO uvo, UsuarioCVO ucvo,
+    public ControladorAdministrador(FrmLogin vLo, FrmAdministrador vAd, UsuarioDAO udao, UsuarioVO uvo, UsuarioCVO ucvo,
             TipoUsuarioDAO tdao, TipoUsuarioVO tvo, PunteoDAO pdao, PunteoVO pvo,
             EstadoDAO edao, EstadoVO evo, BitacoraDAO bdao, BitacoraVO bvo) {
         
+        this.vLo = vLo;
         this.vAd = vAd;
         this.udao = udao;
         this.uvo = uvo;
@@ -68,6 +71,7 @@ public class ControladorAdministrador implements ActionListener, MouseListener, 
         this.vAd.btnAdminReporte.addActionListener(this);
         this.vAd.jcbAdminEstado.addActionListener(this);
         this.vAd.jcbAdminLista.addItemListener(this);
+        this.vAd.btnAdminSalir.addActionListener(this);
         this.vAd.tblAdminMostrar.addMouseListener(this);
         
     }
@@ -360,9 +364,16 @@ public class ControladorAdministrador implements ActionListener, MouseListener, 
                }else{
                    vAd.jopAdminMensaje.showMessageDialog(vAd, "El usuario no pudo ser eliminado");
                }
-           }
-           
+           }   
        }
+       if(e.getSource()==vAd.btnAdminSalir){
+               vAd.dispose();
+               vLo.setVisible(true);
+               vLo.txbLoginUsuario.setEditable(true);
+               vLo.txbLoginContrasena.setEditable(true);
+               vLo.btnAdminLogin.setEnabled(true);
+           }
+       
     }
 
     @Override

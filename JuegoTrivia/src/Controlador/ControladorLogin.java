@@ -58,6 +58,7 @@ public class ControladorLogin implements ActionListener{
         vLo.txbLoginContrasena.setText("");
         vLo.txbLoginUsuario.setEditable(false);
         vLo.txbLoginContrasena.setEditable(false);
+        vLo.btnAdminLogin.setEnabled(false);
         
         
         switch (uvo.getFkTipoUsuarioId()) {
@@ -65,21 +66,25 @@ public class ControladorLogin implements ActionListener{
                 this.vAd.setVisible(true);
                 this.vAd.setLocationRelativeTo(vLo);
                 this.vAd.setResizable(false);
+                //this.vLo.dispose();
                 break;
             case 2://Principiante
                 this.vJp.setVisible(true);
                 this.vJp.setLocationRelativeTo(vLo);
                 this.vJp.setResizable(false);
+                //this.vLo.dispose();
                 break;
             case 3://Intermedio
                 this.vJi.setVisible(true);
                 this.vJi.setLocationRelativeTo(vLo);
                 this.vJi.setResizable(false);
+                //this.vLo.dispose();
                 break;
             case 4://Avanzado
                 this.vJa.setVisible(true);
                 this.vJa.setLocationRelativeTo(vLo);
                 this.vJa.setResizable(false);
+                //this.vLo.dispose();
                 break;
             case 5://Libre
                 break;
