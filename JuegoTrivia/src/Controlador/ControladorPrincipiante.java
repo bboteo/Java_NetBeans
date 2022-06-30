@@ -77,13 +77,11 @@ public class ControladorPrincipiante implements ActionListener, WindowListener{
     }
     
     private void inicializarF(){
-        ArrayList<BitacoraVO> info = new ArrayList<>();
         
         vJp.lblPrincipianteUsuario.setText("Usuario: "+uvo.getUsuario());
         //Hay que agregar la fecha y el ultimo punteo
-        vJp.txbPrincipianteDate.setText("");
-        vJp.txbPrincipiantePuntos.setText("");
-        
+        fechaBitacora();   
+
         vJp.bproJugadorPrincipiante.setValue(0);
         vJp.btnPrincipianteQ6End.setEnabled(true);
         
@@ -104,15 +102,15 @@ public class ControladorPrincipiante implements ActionListener, WindowListener{
         
         //Para preguntas
         q11 = ext.aleatorio();
-        q12 = ext.aleatorio();
+        q12 = 1;//ext.aleatorio();
         q21 = ext.aleatorio();
-        q22 = ext.aleatorio();
+        q22 = 1;//ext.aleatorio();
         q31 = ext.aleatorio();
-        q32 = ext.aleatorio();
+        q32 = 1;//ext.aleatorio();
         q41 = ext.aleatorio();
-        q42 = ext.aleatorio();
+        q42 = 1;//ext.aleatorio();
         q51 = ext.aleatorio();
-        q52 = ext.aleatorio();
+        q52 = 1;//ext.aleatorio();
         q61 = ext.aleatorio();
         q62 = 1; //ext.aleatorio(); 
         
@@ -160,13 +158,23 @@ public class ControladorPrincipiante implements ActionListener, WindowListener{
         
     }
     
+    private void fechaBitacora(){
+        ArrayList<BitacoraVO> info = new ArrayList<>();
+        //Hay que encontrar el ultimo ID en bitacora
+        bvo.setId(bdao.consutarBmaxId(uvo));
+        info = bdao.consultarBintento(bvo);
+        vJp.txbPrincipianteDate.setText(String.valueOf(info.get(0).getDateInicio()));
+        vJp.txbPrincipiantePuntos.setText(String.valueOf(info.get(0).getPunteo()));
+        vJp.txbPrincipianteIntentos.setText(String.valueOf(info.get(0).getNumeroIntento()));
+    }
+    
     private void calificacion(){
-        if(rU1 == rM1) nota = nota + 1;
-        if(rU2 == rM2) nota = nota + 1;
-        if(rU3 == rM3) nota = nota + 1;
-        if(rU4 == rM4) nota = nota + 1;
-        if(rU5 == rM5) nota = nota + 1;
-        if(rU6 == rM6) nota = nota + 1;
+        if((rU1 == rM1)&& !vJp.txbPrincipianteQ1Res.getText().isEmpty()) nota = nota + 1;
+        if((rU2 == rM2)&& !vJp.txbPrincipianteQ1Res.getText().isEmpty()) nota = nota + 1;
+        if((rU3 == rM3)&& !vJp.txbPrincipianteQ1Res.getText().isEmpty()) nota = nota + 1;
+        if((rU4 == rM4)&& !vJp.txbPrincipianteQ1Res.getText().isEmpty()) nota = nota + 1;
+        if((rU5 == rM5)&& !vJp.txbPrincipianteQ1Res.getText().isEmpty()) nota = nota + 1;
+        if((rU6 == rM6)&& !vJp.txbPrincipianteQ1Res.getText().isEmpty()) nota = nota + 1;
         
         if(nota == 6){
             vJp.jopPrincipianteMensaje.showMessageDialog(vJp, "Su nota es: "+nota+" \n"+

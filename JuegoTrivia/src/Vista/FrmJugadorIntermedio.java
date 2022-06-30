@@ -40,34 +40,34 @@ public class FrmJugadorIntermedio extends javax.swing.JFrame {
         lblIntermedioQ2Peso1 = new javax.swing.JLabel();
         lblIntermedioQ2Peso2 = new javax.swing.JLabel();
         scrIntermedioQ2 = new javax.swing.JScrollPane();
-        txaIntermedioQ2Pregunta2 = new javax.swing.JTextArea();
+        txaIntermedioQ2Pregunta = new javax.swing.JTextArea();
         lblIntermedioQ2Res = new javax.swing.JLabel();
-        txbIntermedioQ2Res = new javax.swing.JTextField();
         btnIntermedioQ2Next1 = new javax.swing.JButton();
+        jcbIntermedioQ2Res = new javax.swing.JComboBox<>();
         jpnIntermedioQ3 = new javax.swing.JPanel();
         lblIntermedioQ3Peso1 = new javax.swing.JLabel();
         lblIntermedioQ3Peso2 = new javax.swing.JLabel();
         scrIntermedioQ3 = new javax.swing.JScrollPane();
         txaIntermedioQ3Pregunta = new javax.swing.JTextArea();
         lblIntermedioQ3Res = new javax.swing.JLabel();
-        txbIntermedioQ3Res = new javax.swing.JTextField();
         btnIntermedioQ3Next = new javax.swing.JButton();
+        jcbIntermedioQ3Res = new javax.swing.JComboBox<>();
         jpnIntermedioQ4 = new javax.swing.JPanel();
         lblIntermedioQ4Peso1 = new javax.swing.JLabel();
         lblIntermedioQ4Peso2 = new javax.swing.JLabel();
         scrIntermedioQ4 = new javax.swing.JScrollPane();
-        txaPrincipianteQ4Pregunta = new javax.swing.JTextArea();
+        txaIntermedioQ4Pregunta = new javax.swing.JTextArea();
         lblIntermedioQ4Res = new javax.swing.JLabel();
-        txbIntermedioQ4Res = new javax.swing.JTextField();
         btnIntermedioQ4Next = new javax.swing.JButton();
+        jcbIntermedioQ4Res = new javax.swing.JComboBox<>();
         jpnIntermedioQ5 = new javax.swing.JPanel();
         lblIntermedioQ5Peso1 = new javax.swing.JLabel();
         lblIntermedioQ5Peso2 = new javax.swing.JLabel();
         scrIntermedioQ5 = new javax.swing.JScrollPane();
         txaIntermedioQ5Pregunta = new javax.swing.JTextArea();
         lbIntermedioQ5Res = new javax.swing.JLabel();
-        txbIntermedioQ5Res = new javax.swing.JTextField();
         btnIntermedioQ5Next = new javax.swing.JButton();
+        jcbIntermedioQ5Res = new javax.swing.JComboBox<>();
         jpnIntermedioCabecera = new javax.swing.JPanel();
         lblIntermedioUsuario = new javax.swing.JLabel();
         lblIntermedioIntento = new javax.swing.JLabel();
@@ -78,6 +78,11 @@ public class FrmJugadorIntermedio extends javax.swing.JFrame {
         tbxIntermedioLv3 = new javax.swing.JTextField();
         lblIntermedioPuntos = new javax.swing.JLabel();
         txbIntermedioPuntos = new javax.swing.JTextField();
+        btnIntermedioRepetir = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        txbIntermedioIntentos = new javax.swing.JTextField();
+        bproJugadorIntermedio = new javax.swing.JProgressBar();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Jugador - Principiante");
@@ -151,18 +156,18 @@ public class FrmJugadorIntermedio extends javax.swing.JFrame {
         lblIntermedioQ2Peso2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lblIntermedioQ2Peso2.setText("1/5");
 
-        txaIntermedioQ2Pregunta2.setEditable(false);
-        txaIntermedioQ2Pregunta2.setColumns(20);
-        txaIntermedioQ2Pregunta2.setRows(5);
-        scrIntermedioQ2.setViewportView(txaIntermedioQ2Pregunta2);
+        txaIntermedioQ2Pregunta.setEditable(false);
+        txaIntermedioQ2Pregunta.setColumns(20);
+        txaIntermedioQ2Pregunta.setRows(5);
+        scrIntermedioQ2.setViewportView(txaIntermedioQ2Pregunta);
 
         lblIntermedioQ2Res.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lblIntermedioQ2Res.setText("Respuesta");
 
-        txbIntermedioQ2Res.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-
         btnIntermedioQ2Next1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btnIntermedioQ2Next1.setText("Siguiente");
+
+        jcbIntermedioQ2Res.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
         javax.swing.GroupLayout jpnIntermedioQ2Layout = new javax.swing.GroupLayout(jpnIntermedioQ2);
         jpnIntermedioQ2.setLayout(jpnIntermedioQ2Layout);
@@ -170,19 +175,19 @@ public class FrmJugadorIntermedio extends javax.swing.JFrame {
             jpnIntermedioQ2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jpnIntermedioQ2Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jpnIntermedioQ2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpnIntermedioQ2Layout.createSequentialGroup()
-                        .addComponent(lblIntermedioQ2Res)
-                        .addGap(18, 18, 18)
-                        .addComponent(txbIntermedioQ2Res, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnIntermedioQ2Next1))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpnIntermedioQ2Layout.createSequentialGroup()
+                .addGroup(jpnIntermedioQ2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jpnIntermedioQ2Layout.createSequentialGroup()
                         .addGroup(jpnIntermedioQ2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblIntermedioQ2Peso1)
                             .addComponent(lblIntermedioQ2Peso2))
                         .addGap(26, 26, 26)
-                        .addComponent(scrIntermedioQ2, javax.swing.GroupLayout.PREFERRED_SIZE, 532, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(scrIntermedioQ2, javax.swing.GroupLayout.PREFERRED_SIZE, 532, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jpnIntermedioQ2Layout.createSequentialGroup()
+                        .addComponent(lblIntermedioQ2Res)
+                        .addGap(18, 18, 18)
+                        .addComponent(jcbIntermedioQ2Res, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnIntermedioQ2Next1)))
                 .addGap(24, 24, 24))
         );
         jpnIntermedioQ2Layout.setVerticalGroup(
@@ -200,9 +205,9 @@ public class FrmJugadorIntermedio extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
                 .addGroup(jpnIntermedioQ2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jpnIntermedioQ2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(txbIntermedioQ2Res, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(lblIntermedioQ2Res))
-                    .addComponent(btnIntermedioQ2Next1))
+                        .addComponent(btnIntermedioQ2Next1)
+                        .addComponent(jcbIntermedioQ2Res, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lblIntermedioQ2Res))
                 .addContainerGap(14, Short.MAX_VALUE))
         );
 
@@ -222,10 +227,10 @@ public class FrmJugadorIntermedio extends javax.swing.JFrame {
         lblIntermedioQ3Res.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lblIntermedioQ3Res.setText("Respuesta");
 
-        txbIntermedioQ3Res.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-
         btnIntermedioQ3Next.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btnIntermedioQ3Next.setText("Siguiente");
+
+        jcbIntermedioQ3Res.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
         javax.swing.GroupLayout jpnIntermedioQ3Layout = new javax.swing.GroupLayout(jpnIntermedioQ3);
         jpnIntermedioQ3.setLayout(jpnIntermedioQ3Layout);
@@ -233,19 +238,19 @@ public class FrmJugadorIntermedio extends javax.swing.JFrame {
             jpnIntermedioQ3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jpnIntermedioQ3Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jpnIntermedioQ3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpnIntermedioQ3Layout.createSequentialGroup()
-                        .addComponent(lblIntermedioQ3Res)
-                        .addGap(18, 18, 18)
-                        .addComponent(txbIntermedioQ3Res, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnIntermedioQ3Next))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpnIntermedioQ3Layout.createSequentialGroup()
+                .addGroup(jpnIntermedioQ3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jpnIntermedioQ3Layout.createSequentialGroup()
                         .addGroup(jpnIntermedioQ3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblIntermedioQ3Peso1)
                             .addComponent(lblIntermedioQ3Peso2))
                         .addGap(26, 26, 26)
-                        .addComponent(scrIntermedioQ3, javax.swing.GroupLayout.PREFERRED_SIZE, 532, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(scrIntermedioQ3, javax.swing.GroupLayout.PREFERRED_SIZE, 532, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jpnIntermedioQ3Layout.createSequentialGroup()
+                        .addComponent(lblIntermedioQ3Res)
+                        .addGap(18, 18, 18)
+                        .addComponent(jcbIntermedioQ3Res, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnIntermedioQ3Next)))
                 .addGap(24, 24, 24))
         );
         jpnIntermedioQ3Layout.setVerticalGroup(
@@ -261,11 +266,10 @@ public class FrmJugadorIntermedio extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpnIntermedioQ3Layout.createSequentialGroup()
                         .addComponent(scrIntermedioQ3, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
-                .addGroup(jpnIntermedioQ3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jpnIntermedioQ3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(txbIntermedioQ3Res, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(lblIntermedioQ3Res))
-                    .addComponent(btnIntermedioQ3Next))
+                .addGroup(jpnIntermedioQ3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnIntermedioQ3Next)
+                    .addComponent(jcbIntermedioQ3Res, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblIntermedioQ3Res))
                 .addContainerGap(14, Short.MAX_VALUE))
         );
 
@@ -277,18 +281,18 @@ public class FrmJugadorIntermedio extends javax.swing.JFrame {
         lblIntermedioQ4Peso2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lblIntermedioQ4Peso2.setText("1/5");
 
-        txaPrincipianteQ4Pregunta.setEditable(false);
-        txaPrincipianteQ4Pregunta.setColumns(20);
-        txaPrincipianteQ4Pregunta.setRows(5);
-        scrIntermedioQ4.setViewportView(txaPrincipianteQ4Pregunta);
+        txaIntermedioQ4Pregunta.setEditable(false);
+        txaIntermedioQ4Pregunta.setColumns(20);
+        txaIntermedioQ4Pregunta.setRows(5);
+        scrIntermedioQ4.setViewportView(txaIntermedioQ4Pregunta);
 
         lblIntermedioQ4Res.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lblIntermedioQ4Res.setText("Respuesta");
 
-        txbIntermedioQ4Res.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-
         btnIntermedioQ4Next.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btnIntermedioQ4Next.setText("Siguiente");
+
+        jcbIntermedioQ4Res.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
         javax.swing.GroupLayout jpnIntermedioQ4Layout = new javax.swing.GroupLayout(jpnIntermedioQ4);
         jpnIntermedioQ4.setLayout(jpnIntermedioQ4Layout);
@@ -296,19 +300,19 @@ public class FrmJugadorIntermedio extends javax.swing.JFrame {
             jpnIntermedioQ4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jpnIntermedioQ4Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jpnIntermedioQ4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpnIntermedioQ4Layout.createSequentialGroup()
-                        .addComponent(lblIntermedioQ4Res)
-                        .addGap(18, 18, 18)
-                        .addComponent(txbIntermedioQ4Res, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnIntermedioQ4Next))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpnIntermedioQ4Layout.createSequentialGroup()
+                .addGroup(jpnIntermedioQ4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jpnIntermedioQ4Layout.createSequentialGroup()
                         .addGroup(jpnIntermedioQ4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblIntermedioQ4Peso1)
                             .addComponent(lblIntermedioQ4Peso2))
                         .addGap(26, 26, 26)
-                        .addComponent(scrIntermedioQ4, javax.swing.GroupLayout.PREFERRED_SIZE, 532, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(scrIntermedioQ4, javax.swing.GroupLayout.PREFERRED_SIZE, 532, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jpnIntermedioQ4Layout.createSequentialGroup()
+                        .addComponent(lblIntermedioQ4Res)
+                        .addGap(18, 18, 18)
+                        .addComponent(jcbIntermedioQ4Res, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnIntermedioQ4Next)))
                 .addGap(24, 24, 24))
         );
         jpnIntermedioQ4Layout.setVerticalGroup(
@@ -326,9 +330,9 @@ public class FrmJugadorIntermedio extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
                 .addGroup(jpnIntermedioQ4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jpnIntermedioQ4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(txbIntermedioQ4Res, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(lblIntermedioQ4Res))
-                    .addComponent(btnIntermedioQ4Next))
+                        .addComponent(btnIntermedioQ4Next)
+                        .addComponent(jcbIntermedioQ4Res, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lblIntermedioQ4Res))
                 .addContainerGap(14, Short.MAX_VALUE))
         );
 
@@ -348,10 +352,10 @@ public class FrmJugadorIntermedio extends javax.swing.JFrame {
         lbIntermedioQ5Res.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lbIntermedioQ5Res.setText("Respuesta");
 
-        txbIntermedioQ5Res.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-
         btnIntermedioQ5Next.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btnIntermedioQ5Next.setText("Finalizar");
+
+        jcbIntermedioQ5Res.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
         javax.swing.GroupLayout jpnIntermedioQ5Layout = new javax.swing.GroupLayout(jpnIntermedioQ5);
         jpnIntermedioQ5.setLayout(jpnIntermedioQ5Layout);
@@ -359,19 +363,19 @@ public class FrmJugadorIntermedio extends javax.swing.JFrame {
             jpnIntermedioQ5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jpnIntermedioQ5Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jpnIntermedioQ5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpnIntermedioQ5Layout.createSequentialGroup()
-                        .addComponent(lbIntermedioQ5Res)
-                        .addGap(18, 18, 18)
-                        .addComponent(txbIntermedioQ5Res, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnIntermedioQ5Next))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpnIntermedioQ5Layout.createSequentialGroup()
+                .addGroup(jpnIntermedioQ5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jpnIntermedioQ5Layout.createSequentialGroup()
                         .addGroup(jpnIntermedioQ5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblIntermedioQ5Peso1)
                             .addComponent(lblIntermedioQ5Peso2))
                         .addGap(26, 26, 26)
-                        .addComponent(scrIntermedioQ5, javax.swing.GroupLayout.PREFERRED_SIZE, 532, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(scrIntermedioQ5, javax.swing.GroupLayout.PREFERRED_SIZE, 532, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jpnIntermedioQ5Layout.createSequentialGroup()
+                        .addComponent(lbIntermedioQ5Res)
+                        .addGap(18, 18, 18)
+                        .addComponent(jcbIntermedioQ5Res, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnIntermedioQ5Next)))
                 .addGap(24, 24, 24))
         );
         jpnIntermedioQ5Layout.setVerticalGroup(
@@ -389,9 +393,9 @@ public class FrmJugadorIntermedio extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
                 .addGroup(jpnIntermedioQ5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jpnIntermedioQ5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(txbIntermedioQ5Res, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(lbIntermedioQ5Res))
-                    .addComponent(btnIntermedioQ5Next))
+                        .addComponent(btnIntermedioQ5Next)
+                        .addComponent(jcbIntermedioQ5Res, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lbIntermedioQ5Res))
                 .addContainerGap(14, Short.MAX_VALUE))
         );
 
@@ -416,6 +420,7 @@ public class FrmJugadorIntermedio extends javax.swing.JFrame {
         txbIntermedioLv1.setEditable(false);
         txbIntermedioLv1.setBackground(new java.awt.Color(255, 255, 0));
         txbIntermedioLv1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        txbIntermedioLv1.setText("          ");
         txbIntermedioLv1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txbIntermedioLv1ActionPerformed(evt);
@@ -425,6 +430,7 @@ public class FrmJugadorIntermedio extends javax.swing.JFrame {
         txbIntermedioLv2.setEditable(false);
         txbIntermedioLv2.setBackground(new java.awt.Color(255, 255, 102));
         txbIntermedioLv2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        txbIntermedioLv2.setText("          ");
         txbIntermedioLv2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txbIntermedioLv2ActionPerformed(evt);
@@ -446,6 +452,18 @@ public class FrmJugadorIntermedio extends javax.swing.JFrame {
         txbIntermedioPuntos.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         txbIntermedioPuntos.setForeground(new java.awt.Color(153, 153, 153));
 
+        btnIntermedioRepetir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/sincronizar.png"))); // NOI18N
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel1.setText("Reiniciar la Prueba");
+
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel2.setText("Intentos");
+
+        txbIntermedioIntentos.setEditable(false);
+        txbIntermedioIntentos.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        txbIntermedioIntentos.setForeground(new java.awt.Color(153, 153, 153));
+
         javax.swing.GroupLayout jpnIntermedioCabeceraLayout = new javax.swing.GroupLayout(jpnIntermedioCabecera);
         jpnIntermedioCabecera.setLayout(jpnIntermedioCabeceraLayout);
         jpnIntermedioCabeceraLayout.setHorizontalGroup(
@@ -453,24 +471,35 @@ public class FrmJugadorIntermedio extends javax.swing.JFrame {
             .addGroup(jpnIntermedioCabeceraLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jpnIntermedioCabeceraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblIntermedioUsuario)
-                    .addComponent(lblIntermedioIntento))
-                .addGap(18, 18, 18)
-                .addGroup(jpnIntermedioCabeceraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblIntermedioNivel)
-                    .addComponent(txbIntermedioDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jpnIntermedioCabeceraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpnIntermedioCabeceraLayout.createSequentialGroup()
-                        .addComponent(txbIntermedioLv1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(txbIntermedioLv2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(tbxIntermedioLv3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jpnIntermedioCabeceraLayout.createSequentialGroup()
-                        .addComponent(lblIntermedioPuntos)
+                        .addGroup(jpnIntermedioCabeceraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblIntermedioUsuario)
+                            .addComponent(lblIntermedioIntento))
                         .addGap(18, 18, 18)
-                        .addComponent(txbIntermedioPuntos, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(jpnIntermedioCabeceraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblIntermedioNivel)
+                            .addComponent(txbIntermedioDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jpnIntermedioCabeceraLayout.createSequentialGroup()
+                        .addComponent(btnIntermedioRepetir)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel1)))
+                .addGap(18, 18, 18)
+                .addGroup(jpnIntermedioCabeceraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jpnIntermedioCabeceraLayout.createSequentialGroup()
+                        .addComponent(jLabel2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(txbIntermedioIntentos, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jpnIntermedioCabeceraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpnIntermedioCabeceraLayout.createSequentialGroup()
+                            .addComponent(txbIntermedioLv1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(18, 18, 18)
+                            .addComponent(txbIntermedioLv2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(18, 18, 18)
+                            .addComponent(tbxIntermedioLv3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jpnIntermedioCabeceraLayout.createSequentialGroup()
+                            .addComponent(lblIntermedioPuntos)
+                            .addGap(18, 18, 18)
+                            .addComponent(txbIntermedioPuntos, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jpnIntermedioCabeceraLayout.setVerticalGroup(
@@ -489,26 +518,40 @@ public class FrmJugadorIntermedio extends javax.swing.JFrame {
                     .addComponent(txbIntermedioDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblIntermedioPuntos)
                     .addComponent(txbIntermedioPuntos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(16, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
+                .addGroup(jpnIntermedioCabeceraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnIntermedioRepetir, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpnIntermedioCabeceraLayout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addContainerGap())
+                    .addGroup(jpnIntermedioCabeceraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel2)
+                        .addComponent(txbIntermedioIntentos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
         );
+
+        bproJugadorIntermedio.setBackground(new java.awt.Color(255, 255, 255));
+        bproJugadorIntermedio.setForeground(new java.awt.Color(255, 255, 0));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jpnIntermedioCabecera, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jTabbedPane1))
-                .addContainerGap(12, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(jpnIntermedioCabecera, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(bproJugadorIntermedio, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 618, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jpnIntermedioCabecera, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(26, 26, 26)
+                .addComponent(bproJugadorIntermedio, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -564,13 +607,21 @@ public class FrmJugadorIntermedio extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JProgressBar bproJugadorIntermedio;
     public javax.swing.JButton btnIntermedioQ1Next;
     public javax.swing.JButton btnIntermedioQ2Next1;
     public javax.swing.JButton btnIntermedioQ3Next;
     public javax.swing.JButton btnIntermedioQ4Next;
     public javax.swing.JButton btnIntermedioQ5Next;
-    private javax.swing.JTabbedPane jTabbedPane1;
+    public javax.swing.JButton btnIntermedioRepetir;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    public javax.swing.JTabbedPane jTabbedPane1;
     public javax.swing.JComboBox<String> jcbIntermedioQ1Res;
+    public javax.swing.JComboBox<String> jcbIntermedioQ2Res;
+    public javax.swing.JComboBox<String> jcbIntermedioQ3Res;
+    public javax.swing.JComboBox<String> jcbIntermedioQ4Res;
+    public javax.swing.JComboBox<String> jcbIntermedioQ5Res;
     public javax.swing.JOptionPane jopIntermedioMensaje;
     private javax.swing.JPanel jpnIntermedioCabecera;
     public javax.swing.JPanel jpnIntermedioQ1;
@@ -595,7 +646,7 @@ public class FrmJugadorIntermedio extends javax.swing.JFrame {
     private javax.swing.JLabel lblIntermedioQ4Res;
     private javax.swing.JLabel lblIntermedioQ5Peso1;
     private javax.swing.JLabel lblIntermedioQ5Peso2;
-    private javax.swing.JLabel lblIntermedioUsuario;
+    public javax.swing.JLabel lblIntermedioUsuario;
     private javax.swing.JLabel lblIntermedioeQ1Peso;
     public javax.swing.JScrollPane scrIntermedioQ1;
     public javax.swing.JScrollPane scrIntermedioQ2;
@@ -604,17 +655,14 @@ public class FrmJugadorIntermedio extends javax.swing.JFrame {
     public javax.swing.JScrollPane scrIntermedioQ5;
     public javax.swing.JTextField tbxIntermedioLv3;
     public javax.swing.JTextArea txaIntermedioQ1Pregunta;
-    public javax.swing.JTextArea txaIntermedioQ2Pregunta2;
+    public javax.swing.JTextArea txaIntermedioQ2Pregunta;
     public javax.swing.JTextArea txaIntermedioQ3Pregunta;
+    public javax.swing.JTextArea txaIntermedioQ4Pregunta;
     public javax.swing.JTextArea txaIntermedioQ5Pregunta;
-    public javax.swing.JTextArea txaPrincipianteQ4Pregunta;
     public javax.swing.JTextField txbIntermedioDate;
+    public javax.swing.JTextField txbIntermedioIntentos;
     public javax.swing.JTextField txbIntermedioLv1;
     public javax.swing.JTextField txbIntermedioLv2;
     public javax.swing.JTextField txbIntermedioPuntos;
-    public javax.swing.JTextField txbIntermedioQ2Res;
-    public javax.swing.JTextField txbIntermedioQ3Res;
-    public javax.swing.JTextField txbIntermedioQ4Res;
-    public javax.swing.JTextField txbIntermedioQ5Res;
     // End of variables declaration//GEN-END:variables
 }

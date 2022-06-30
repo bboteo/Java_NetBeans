@@ -14,6 +14,8 @@ public class Leeme {
     Lunes 14:30 - 17:00 (2.5)
     Miercoles 7:00 - 10:00 (3)
     Miercoles 14:30 - 17:00 (2.5)
+    Martes 14:00 - 17:00 (3h)
+    
     
     TIEMPO TOTAL= 23.5Hrs
     

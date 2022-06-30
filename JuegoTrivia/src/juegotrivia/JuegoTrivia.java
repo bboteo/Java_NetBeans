@@ -2,6 +2,7 @@
 package juegotrivia;
 
 import Controlador.ControladorAdministrador;
+import Controlador.ControladorIntermedio;
 import Controlador.ControladorLogin;
 import Controlador.ControladorPrincipiante;
 import Modelo.BitacoraDAO;
@@ -48,6 +49,7 @@ public class JuegoTrivia {
         ControladorLogin cLo = new ControladorLogin(fLo, fAd, fJp, fJi, fJa, udao, uvo);
         ControladorAdministrador cAd = new ControladorAdministrador(fAd, udao, uvo, ucvo, tdao, tvo, pdao, pvo, edao, evo, bdao, dvo);
         ControladorPrincipiante cJp = new ControladorPrincipiante(fJp, fJi, uvo, udao, pvo, pdao, evo, edao, tvo, tdao, dvo, bdao);
+        ControladorIntermedio cJi = new ControladorIntermedio(fJi, fJa, uvo, udao, pvo, pdao, evo, edao, tvo, tdao, dvo, bdao);
         
         //Iniciar la aplicacion
         fLo.setVisible(true);

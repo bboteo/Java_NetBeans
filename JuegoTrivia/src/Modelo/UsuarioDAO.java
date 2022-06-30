@@ -254,7 +254,7 @@ public class UsuarioDAO implements TablaUsuario{
             c.conectar();
             String query = "UPDATE dbjuego.tbl_usuario AS u " +
                             "SET " +
-                            "u.fk_tipo_usuario_id = "+u.getFkTipoUsuarioId()+"," +
+                            "u.fk_tipo_usuario_id = "+u.getFkTipoUsuarioId() +" "+
                             "WHERE u.id = "+u.getId();
             c.consultasMultiples(query);
         } catch (Exception e) {

@@ -9,4 +9,7 @@ public interface TablaBitacora {
     public boolean eliminarB (BitacoraVO b);
     public boolean actualizarB (BitacoraVO b);
     
+    //Nuevas consultas
+    public int consutarBmaxId(UsuarioVO u); //Para consultar la ultima entrada a bitacora X usuario
+    public ArrayList<BitacoraVO> consultarBintento(BitacoraVO b);
 }
