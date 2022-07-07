@@ -18,4 +18,6 @@ public interface TablaUsuario {
     //Consultas JOIN
     public ArrayList<UsuarioCVO> consultarUjoin(UsuarioVO u, EstadoVO e, TipoUsuarioVO tu, PunteoVO p);
     
+    //Para reporte
+    public void reporte();
 }

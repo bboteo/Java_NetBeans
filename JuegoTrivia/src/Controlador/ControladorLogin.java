@@ -87,6 +87,12 @@ public class ControladorLogin implements ActionListener{
                 //this.vLo.dispose();
                 break;
             case 5://Libre
+                this.vLo.jopLoginMensaje.showMessageDialog(vLo, "Usted ya completo todos los niveles");
+                vLo.txbLoginUsuario.setText("");
+                vLo.txbLoginContrasena.setText("");
+                vLo.txbLoginUsuario.setEditable(true);
+                vLo.txbLoginContrasena.setEditable(true);
+                vLo.btnAdminLogin.setEnabled(true);
                 break;
             default://su tipo de usuario no corresponde
                 

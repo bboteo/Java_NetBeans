@@ -340,6 +340,12 @@ public class ControladorAdministrador implements ActionListener, MouseListener, 
         vAd.jcbAdminTipoJugador.setEnabled(false);
     }
     
+    private void reporte(){
+        udao.reporte();
+        udao.jv.setDefaultCloseOperation(vAd.DISPOSE_ON_CLOSE);
+        udao.jv.setVisible(true);
+    }
+    
     @Override
     public void actionPerformed(ActionEvent e) {
        if(e.getSource()==vAd.btnAdminGuardar){
@@ -373,6 +379,9 @@ public class ControladorAdministrador implements ActionListener, MouseListener, 
                vLo.txbLoginContrasena.setEditable(true);
                vLo.btnAdminLogin.setEnabled(true);
            }
+       if(e.getSource()==vAd.btnAdminReporte){
+           this.reporte();
+       }
        
     }
 

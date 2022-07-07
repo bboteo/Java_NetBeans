@@ -190,11 +190,12 @@ public class ControladorAvanzado implements ActionListener, WindowListener{
                                                           +uvo.getNombre()+" "+uvo.getApellido()+"\n"
                                                           +"Punteo Final: "+pvo.getPunteo());
             
-                       
-            //this.vJa.setVisible(true);
-            //this.vJa.setLocationRelativeTo(vJi);
-            //this.vJa.setResizable(false);
-            this.vJa.setVisible(false);
+                                  
+            vJa.dispose();
+            vLo.setVisible(true);
+            vLo.txbLoginUsuario.setEditable(true);
+            vLo.txbLoginContrasena.setEditable(true);
+            vLo.btnAdminLogin.setEnabled(true);
             
             }else{
             vJa.jopAvanzadoMensaje.showMessageDialog(vJa,"Su nota es: "+nota+" \n"+
